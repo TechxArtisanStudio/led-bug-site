@@ -1,5 +1,10 @@
 ---
 import { GA_MEASUREMENT_ID } from '../lib/analytics';
+import { getMessages } from '../lib/i18n';
+import { getLocaleFromPath } from '../lib/locale-from-path';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const c = (await getMessages(locale)).cookie;
 ---
 
 <div
@@ -13,16 +18,14 @@ import { GA_MEASUREMENT_ID } from '../lib/analytics';
   <div class="mx-auto flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
     <div class="min-w-0">
       <p id="cookie-consent-title" class="font-mono text-xs uppercase tracking-widest text-cyan-400/80">
-        Cookie preferences
+        {c.title}
       </p>
       <p id="cookie-consent-desc" class="mt-2 text-sm leading-relaxed text-white/65">
-        We use Google Analytics to understand how visitors use the site. Analytics cookies are
-        <strong class="font-medium text-white/80">off by default</strong> — enable them only if
-        you are comfortable with anonymous usage data being collected.
+        {c.description}
       </p>
       <details class="mt-3 text-sm text-white/55">
         <summary class="cursor-pointer select-none text-white/70 hover:text-cyan-400">
-          Manage settings
+          {c.manageSettings}
         </summary>
         <label class="mt-3 flex cursor-pointer items-start gap-3 rounded-lg border border-white/10 bg-bg/50 p-3">
           <input
@@ -31,9 +34,9 @@ import { GA_MEASUREMENT_ID } from '../lib/analytics';
             class="mt-0.5 h-4 w-4 rounded border-white/20 bg-bg accent-accent"
           />
           <span>
-            <span class="block font-medium text-white/80">Google Analytics</span>
+            <span class="block font-medium text-white/80">{c.analyticsLabel}</span>
             <span class="mt-0.5 block text-xs text-white/45">
-              Anonymous page views and traffic sources ({GA_MEASUREMENT_ID}).
+              {c.analyticsHint} ({GA_MEASUREMENT_ID}).
             </span>
           </span>
         </label>
@@ -45,14 +48,14 @@ import { GA_MEASUREMENT_ID } from '../lib/analytics';
         type="button"
         class="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent/90"
       >
-        Save preferences
+        {c.save}
       </button>
       <button
         id="cookie-consent-reject"
         type="button"
         class="rounded-full border border-white/15 px-5 py-2.5 text-sm text-white/75 transition hover:border-white/30 hover:text-white"
       >
-        Essential only
+        {c.essentialOnly}
       </button>
     </div>
   </div>

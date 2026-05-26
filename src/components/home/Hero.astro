@@ -1,6 +1,14 @@
 ---
 import { ASSETS } from '../../lib/cdn';
+import { getMessages } from '../../lib/i18n';
+import { getLocaleFromPath } from '../../lib/locale-from-path';
+import { localePath } from '../../i18n/locales';
 import LedGrid from '../LedGrid';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const m = await getMessages(locale);
+const h = m.home;
+const lp = (p: string) => localePath(locale, p);
 ---
 
 <section class="relative flex min-h-[100dvh] items-center overflow-hidden pt-14 lg:items-end sm:pt-16">
@@ -38,44 +46,43 @@ import LedGrid from '../LedGrid';
     <p
       class="reveal reveal-on-load font-mono text-xs uppercase tracking-[0.25em] text-cyan-400/90 sm:text-sm"
     >
-      WLED · DMX512 · ESP32
+      {h.tagline}
     </p>
     <h1
       class="reveal reveal-on-load mt-4 max-w-3xl text-3xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl"
       style="transition-delay: 0.1s"
     >
-      Creative LED control for installations &amp; makers
+      {h.title}
     </h1>
     <p
       class="reveal reveal-on-load mt-5 max-w-xl text-base leading-relaxed text-white/65 sm:text-lg"
       style="transition-delay: 0.2s"
     >
-      From gallery-scale robotics to desk prototypes — one controller platform that runs WLED out of
-      the box and opens up when you need custom code.
+      {h.subtitle}
     </p>
     <div
       class="reveal reveal-on-load mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
       style="transition-delay: 0.3s"
     >
       <a
-        href="#work"
+        href={`${lp('/')}#work`}
         class="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent/90"
       >
-        See our work
+        {h.ctaWork}
       </a>
       <a
-        href="#products"
+        href={`${lp('/')}#products`}
         class="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white/90 transition hover:border-cyan-400/50 hover:text-cyan-400"
       >
-        Explore controllers
+        {h.ctaProducts}
       </a>
     </div>
   </div>
 
   <a
-    href="#work"
+    href={`${lp('/')}#work`}
     class="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-white/40 transition hover:text-cyan-400"
-    aria-label="Scroll to work"
+    aria-label={h.scrollToWork}
   >
     <svg
       class="chevron-pulse h-6 w-6"

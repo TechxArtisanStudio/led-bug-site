@@ -7,20 +7,29 @@ import Seo from '../components/Seo.astro';
 import Analytics from '../components/Analytics.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import type { PageSeo } from '../lib/seo';
+import { getMessages } from '../lib/i18n';
+import { createLocaleContext } from '../lib/locale-context';
+import { getLocaleFromPath } from '../lib/locale-from-path';
+import { localeMeta, type Locale } from '../i18n/locales';
 
 interface Props extends PageSeo {
+  locale?: Locale;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const seo = Astro.props;
+const locale = Astro.props.locale ?? getLocaleFromPath(Astro.url.pathname);
+const messages = await getMessages(locale);
+Astro.locals.i18n = createLocaleContext(locale, messages);
+const meta = localeMeta[locale];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={meta.htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <Seo {...seo} />
+    <Seo {...seo} locale={locale} ogLocale={meta.ogLocale} />
     <Analytics />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

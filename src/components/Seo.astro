@@ -3,7 +3,6 @@ import { img } from '../lib/cdn';
 import {
   DEFAULT_DESCRIPTION,
   DEFAULT_OG_IMAGE,
-  SITE_LOCALE,
   SITE_NAME,
   TWITTER_HANDLE,
   canonicalUrl,
@@ -12,6 +11,8 @@ import {
   webSiteJsonLd,
   type OgType,
 } from '../lib/seo';
+import { locales, localeMeta, defaultLocale, localePath, stripLocalePath } from '../i18n/locales';
+import type { Locale } from '../i18n/locales';
 
 interface Props {
   title?: string;
@@ -25,6 +26,8 @@ interface Props {
   authors?: string[];
   noindex?: boolean;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  locale?: Locale;
+  ogLocale?: string;
 }
 
 const {
@@ -39,16 +42,19 @@ const {
   authors,
   noindex = false,
   jsonLd,
+  locale = defaultLocale,
+  ogLocale = localeMeta[locale].ogLocale,
 } = Astro.props;
 
 const resolvedTitle = pageTitle(title);
 const shareTitle = socialTitle ? pageTitle(socialTitle) : resolvedTitle;
 const canonical = canonicalUrl(Astro.url.pathname);
 const ogImageAlt = imageAlt ?? shareTitle;
+const pathBase = stripLocalePath(Astro.url.pathname);
 
 const structuredData = [
   organizationJsonLd(),
-  ...(Astro.url.pathname === '/' ? [webSiteJsonLd()] : []),
+  ...(pathBase === '/' ? [webSiteJsonLd()] : []),
   ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []),
 ];
 ---
@@ -59,13 +65,25 @@ const structuredData = [
 <link rel="canonical" href={canonical} />
 {noindex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow" />}
 
+<!-- hreflang -->
+{
+  locales.map((code) => (
+    <link
+      rel="alternate"
+      hreflang={localeMeta[code].htmlLang}
+      href={canonicalUrl(localePath(code, pathBase))}
+    />
+  ))
+}
+<link rel="alternate" hreflang="x-default" href={canonicalUrl(localePath(defaultLocale, pathBase))} />
+
 <!-- Icons & theme -->
 <link rel="icon" type="image/webp" href={img('branding/favicon.webp')} />
 <meta name="theme-color" content="#0a0a0f" />
 
 <!-- Open Graph -->
 <meta property="og:site_name" content={SITE_NAME} />
-<meta property="og:locale" content={SITE_LOCALE} />
+<meta property="og:locale" content={ogLocale} />
 <meta property="og:type" content={type} />
 <meta property="og:title" content={shareTitle} />
 <meta property="og:description" content={description} />

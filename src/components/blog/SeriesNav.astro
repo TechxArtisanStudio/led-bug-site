@@ -1,4 +1,7 @@
 ---
+import { getLocaleFromPath } from '../../lib/locale-from-path';
+import { localePath } from '../../i18n/locales';
+
 interface Props {
   series?: string;
   part?: number;
@@ -7,6 +10,8 @@ interface Props {
 }
 
 const { series, part, prev, next } = Astro.props;
+const locale = getLocaleFromPath(Astro.url.pathname);
+const blog = (slug: string) => localePath(locale, `/blog/${slug}`);
 ---
 
 {
@@ -19,7 +24,7 @@ const { series, part, prev, next } = Astro.props;
         <div class="blog-read-column flex items-center justify-between gap-4">
         {prev ? (
           <a
-            href={`/blog/${prev.slug}`}
+            href={blog(prev.slug)}
             class="text-sm text-white/60 transition hover:text-cyan-400"
           >
             ← {prev.label}
@@ -34,7 +39,7 @@ const { series, part, prev, next } = Astro.props;
         )}
         {next ? (
           <a
-            href={`/blog/${next.slug}`}
+            href={blog(next.slug)}
             class="text-right text-sm text-white/60 transition hover:text-cyan-400"
           >
             {next.label} →

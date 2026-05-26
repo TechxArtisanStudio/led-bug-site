@@ -1,0 +1,46 @@
+---
+import { getCollection, render } from 'astro:content';
+import PostLayout from '../../../layouts/PostLayout.astro';
+import { postSlug, postsForLocale, seriesNav } from '../../../lib/posts';
+import { nonDefaultLocales, isLocale, type Locale } from '../../../i18n/locales';
+
+export async function getStaticPaths() {
+  const all = await getCollection('posts');
+  const paths = [];
+  for (const locale of nonDefaultLocales) {
+    for (const post of postsForLocale(all, locale)) {
+      paths.push({
+        params: { locale, slug: postSlug(post) },
+        props: { post, allPosts: all, locale },
+      });
+    }
+  }
+  return paths;
+}
+
+const { post, allPosts, locale } = Astro.props as {
+  post: Awaited<ReturnType<typeof getCollection<'posts'>>>[number];
+  allPosts: Awaited<ReturnType<typeof getCollection<'posts'>>>;
+  locale: Locale;
+};
+if (!isLocale(locale)) throw new Error('invalid locale');
+const { Content } = await render(post);
+const nav = seriesNav(post, allPosts);
+---
+
+<PostLayout
+  locale={locale}
+  title={post.data.title}
+  subtitle={post.data.subtitle}
+  description={post.data.description}
+  date={post.data.date}
+  authors={post.data.authors}
+  categories={post.data.categories}
+  cover={post.data.cover}
+  series={post.data.series}
+  part={post.data.part}
+  prev={nav.prev}
+  next={nav.next}
+>
+  <Content />
+</PostLayout>

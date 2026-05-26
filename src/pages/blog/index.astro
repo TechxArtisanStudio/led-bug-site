@@ -3,10 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageSection from '../../components/PageSection.astro';
 import PostCard from '../../components/blog/PostCard.astro';
 import { getCollection } from 'astro:content';
-import { postSlug } from '../../lib/posts';
+import { postSlug, postsForLocale } from '../../lib/posts';
 import { img } from '../../lib/cdn';
+import { getMessages } from '../../lib/i18n';
+import { defaultLocale } from '../../i18n/locales';
 
-const posts = (await getCollection('posts')).sort(
+const m = await getMessages(defaultLocale);
+const b = m.blog;
+const posts = postsForLocale(await getCollection('posts'), defaultLocale).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
@@ -14,18 +18,15 @@ const cover = posts[0]?.data.cover ?? img('blog/coloured-towers/part-1-journey-i
 ---
 
 <BaseLayout
-  title="Blog"
-  description="Stories from TechxArtisan installations — collaborations with artists, technical deep dives, and the LED technology behind gallery-scale work."
+  title={b.indexTitle}
+  description={b.metaDescription}
   image={cover}
-  imageAlt="LED-Bug blog — installation stories and technical deep dives"
+  imageAlt={b.imageAlt}
 >
   <PageSection>
-    <p class="font-mono text-xs uppercase tracking-widest text-cyan-400/80">Journal</p>
-    <h1 class="mt-2 text-4xl font-bold text-white sm:text-5xl">Blog</h1>
-    <p class="mt-4 max-w-xl text-white/60">
-      Stories behind our installations — collaborations, experiments, and the technology that
-      powers them.
-    </p>
+    <p class="font-mono text-xs uppercase tracking-widest text-cyan-400/80">{b.label}</p>
+    <h1 class="mt-2 text-4xl font-bold text-white sm:text-5xl">{b.heading}</h1>
+    <p class="mt-4 max-w-xl text-white/60">{b.intro}</p>
 
     <div class="mt-12 grid gap-6 sm:grid-cols-2">
       {

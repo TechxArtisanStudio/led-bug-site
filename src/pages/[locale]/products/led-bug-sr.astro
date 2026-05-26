@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { ASSETS, SHOP_URL } from '../../../lib/cdn';
+import { canonicalUrl, productJsonLd } from '../../../lib/seo';
+import { getMessages } from '../../../lib/i18n';
+import { localePath, nonDefaultLocales, isLocale, type Locale } from '../../../i18n/locales';
+
+export function getStaticPaths() {
+  return nonDefaultLocales.map((locale) => ({ params: { locale }, props: { locale } }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+if (!isLocale(locale)) throw new Error('invalid locale');
+const m = await getMessages(locale);
+const pr = m.products.sr;
+const lp = (p: string) => localePath(locale, p);
+---
+
+<BaseLayout
+  locale={locale}
+  title={pr.name}
+  description={pr.metaDescription}
+  image={ASSETS.sr.hero}
+  imageAlt={pr.imageAlt}
+  jsonLd={productJsonLd({
+    name: pr.name,
+    description: pr.metaDescription,
+    url: canonicalUrl(Astro.url.pathname),
+    image: ASSETS.sr.hero,
+  })}
+>
+  <article class="mx-auto max-w-3xl px-4 pb-20 pt-24 sm:px-6">
+    <a href={`${lp('/')}#products`} class="text-sm text-white/50 hover:text-cyan-400">{m.products.back}</a>
+    <h1 class="mt-6 text-4xl font-bold text-white">{pr.name}</h1>
+    <img src={ASSETS.sr.hero} alt={pr.name} class="mt-8 rounded-xl" />
+    <p class="mt-8 text-white/70 leading-relaxed">{pr.body}</p>
+    <a
+      href={SHOP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-8 inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent/90"
+    >
+      {m.products.shopNow}
+    </a>
+    <div class="mt-8 space-y-4">
+      {ASSETS.sr.intros.map((src) => (
+        <img src={src} alt="" class="w-full rounded-lg border border-white/10" />
+      ))}
+    </div>
+  </article>
+</BaseLayout>

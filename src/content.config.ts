@@ -13,6 +13,8 @@ const posts = defineCollection({
     part: z.number().optional(),
     cover: z.string().url(),
     description: z.string(),
+    locale: z.string().optional(),
+    translationKey: z.string().optional(),
   }),
 });
 

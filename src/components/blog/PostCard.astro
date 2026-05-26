@@ -1,4 +1,7 @@
 ---
+import { getLocaleFromPath } from '../../lib/locale-from-path';
+import { localePath } from '../../i18n/locales';
+
 interface Props {
   title: string;
   subtitle: string;
@@ -10,6 +13,8 @@ interface Props {
 }
 
 const { title, subtitle, description, cover, date, categories, slug } = Astro.props;
+const locale = getLocaleFromPath(Astro.url.pathname);
+const href = `${localePath(locale, `/blog/${slug}`)}`;
 
 const formattedDate = date.toLocaleDateString('en-GB', {
   year: 'numeric',
@@ -19,7 +24,7 @@ const formattedDate = date.toLocaleDateString('en-GB', {
 ---
 
 <a
-  href={`/blog/${slug}`}
+  href={href}
   class="glow-card group relative flex flex-col overflow-hidden rounded-2xl bg-surface"
   style="--glow-color: #00e5ff"
 >

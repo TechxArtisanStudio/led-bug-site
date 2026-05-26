@@ -5,6 +5,9 @@ import SeriesNav from '../components/blog/SeriesNav.astro';
 import Prose from '../components/blog/Prose.astro';
 import { SHOP_URL } from '../lib/cdn';
 import { articleJsonLd, canonicalUrl } from '../lib/seo';
+import { getMessages } from '../lib/i18n';
+import { getLocaleFromPath } from '../lib/locale-from-path';
+import { localePath, type Locale } from '../i18n/locales';
 
 interface Props {
   title: string;
@@ -18,14 +21,20 @@ interface Props {
   part?: number;
   prev?: { slug: string; label: string };
   next?: { slug: string; label: string };
+  locale?: Locale;
 }
 
 const props = Astro.props;
+const locale = props.locale ?? getLocaleFromPath(Astro.url.pathname);
+const m = await getMessages(locale);
+const b = m.blog;
+const lp = (p: string) => localePath(locale, p);
 const pageHeading = `${props.subtitle} — ${props.title}`;
 const url = canonicalUrl(Astro.url.pathname);
 ---
 
 <BaseLayout
+  locale={locale}
   title={pageHeading}
   socialTitle={props.title}
   description={props.description}
@@ -66,23 +75,23 @@ const url = canonicalUrl(Astro.url.pathname);
     <footer class="border-t border-white/10 bg-surface/30 py-10">
       <div class="blog-body-shell">
         <div class="blog-read-column flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p class="text-sm text-white/50">Building with LED-Bug controllers?</p>
-        <div class="flex flex-wrap gap-3">
-          <a
-            href="/#products"
-            class="rounded-full border border-white/20 px-4 py-2 text-sm text-white/80 transition hover:border-cyan-400/50 hover:text-cyan-400"
-          >
-            Explore controllers
-          </a>
-          <a
-            href={SHOP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition hover:bg-accent/90"
-          >
-            Shop now
-          </a>
-        </div>
+          <p class="text-sm text-white/50">{b.postFooterCta}</p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href={`${lp('/')}#products`}
+              class="rounded-full border border-white/20 px-4 py-2 text-sm text-white/80 transition hover:border-cyan-400/50 hover:text-cyan-400"
+            >
+              {b.exploreControllers}
+            </a>
+            <a
+              href={SHOP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition hover:bg-accent/90"
+            >
+              {m.products.shopNow}
+            </a>
+          </div>
         </div>
       </div>
     </footer>

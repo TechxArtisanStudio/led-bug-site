@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageSection from '../../components/PageSection.astro';
+import { img } from '../../lib/cdn';
+import { getMessages } from '../../lib/i18n';
+import { nonDefaultLocales, type Locale } from '../../i18n/locales';
+import { isLocale } from '../../i18n/locales';
+
+export function getStaticPaths() {
+  return nonDefaultLocales.map((locale) => ({ params: { locale }, props: { locale } }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+const m = await getMessages(locale);
+const a = m.about;
+---
+
+<BaseLayout
+  locale={locale}
+  title={a.title}
+  description={a.metaDescription}
+  image={img('branding/cover-en.webp')}
+  imageAlt={a.imageAlt}
+>
+  <PageSection>
+    <div class="max-w-2xl">
+      <h1 class="text-4xl font-bold text-white">{a.heading}</h1>
+      <p class="mt-6 leading-relaxed text-white/65">{a.body}</p>
+      <ul class="mt-8 space-y-3 text-white/70">
+        <li>
+          <a href="https://github.com/TechxArtisan" class="hover:text-cyan-400" target="_blank" rel="noopener">GitHub</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/@TechxArtisan" class="hover:text-cyan-400" target="_blank" rel="noopener">YouTube</a>
+        </li>
+      </ul>
+    </div>
+  </PageSection>
+</BaseLayout>

@@ -6,11 +6,15 @@ import PlatformBridge from '../components/home/PlatformBridge.astro';
 import ProductDual from '../components/home/ProductDual.astro';
 import BlogPreview from '../components/home/BlogPreview.astro';
 import { ASSETS } from '../lib/cdn';
+import { getMessages } from '../lib/i18n';
+import { defaultLocale } from '../i18n/locales';
+
+const m = await getMessages(defaultLocale);
 ---
 
 <BaseLayout
   image={ASSETS.heroPoster}
-  imageAlt="Mechanical Tree — LED installation powered by LED-Bug controllers"
+  imageAlt={m.home.heroImageAlt}
 >
   <Hero />
   <InstallationShowcase />

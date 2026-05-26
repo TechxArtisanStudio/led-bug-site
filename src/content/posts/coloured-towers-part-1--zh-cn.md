@@ -1,4 +1,5 @@
 ---
+locale: zh-cn
 title: "The Joys of Colour, Technology and Light"
 subtitle: "Part 1 — Story Behind the Artwork"
 date: 2022-07-06

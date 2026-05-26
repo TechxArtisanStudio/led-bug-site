@@ -2,22 +2,23 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageSection from '../components/PageSection.astro';
 import { img } from '../lib/cdn';
+import { getMessages } from '../lib/i18n';
+import { defaultLocale } from '../i18n/locales';
+
+const m = await getMessages(defaultLocale);
+const a = m.about;
 ---
 
 <BaseLayout
-  title="About"
-  description="LED-Bug is a creative LED control platform by TechxArtisan — ESP32 controllers with WLED, DMX512, and custom firmware for installations and makers."
+  title={a.title}
+  description={a.metaDescription}
   image={img('branding/cover-en.webp')}
-  imageAlt="LED-Bug creative LED control by TechxArtisan"
+  imageAlt={a.imageAlt}
 >
   <PageSection>
     <div class="max-w-2xl">
-      <h1 class="text-4xl font-bold text-white">About</h1>
-      <p class="mt-6 leading-relaxed text-white/65">
-        LED-Bug is a creative LED control platform by
-        <a href="https://techxartisan.com/en/" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">TechxArtisan</a>.
-        We build controllers for installations, makers, and artists working with light.
-      </p>
+      <h1 class="text-4xl font-bold text-white">{a.heading}</h1>
+      <p class="mt-6 leading-relaxed text-white/65">{a.body}</p>
       <ul class="mt-8 space-y-3 text-white/70">
         <li>
           <a href="https://github.com/TechxArtisan" class="hover:text-cyan-400" target="_blank" rel="noopener">GitHub</a>

@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageSection from '../../../components/PageSection.astro';
+import { getProjects } from '../../../data/projects';
+import GlowCard from '../../../components/home/GlowCard.astro';
+import { img } from '../../../lib/cdn';
+import { getMessages } from '../../../lib/i18n';
+import { localePath, nonDefaultLocales, isLocale, type Locale } from '../../../i18n/locales';
+
+export function getStaticPaths() {
+  return nonDefaultLocales.map((locale) => ({ params: { locale }, props: { locale } }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+if (!isLocale(locale)) throw new Error('invalid locale');
+const m = await getMessages(locale);
+const p = m.projects;
+const projects = await getProjects(locale);
+const lp = (path: string) => localePath(locale, path);
+---
+
+<BaseLayout
+  locale={locale}
+  title={p.indexTitle}
+  description={p.metaDescription}
+  image={img('projects/coloured-towers/cover.webp')}
+  imageAlt={p.imageAlt}
+>
+  <PageSection>
+    <h1 class="text-4xl font-bold text-white">{p.heading}</h1>
+    <p class="mt-3 max-w-xl text-white/60">{p.intro}</p>
+    <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        projects.map((proj) => (
+          <GlowCard
+            href={`${lp('/projects')}/${proj.slug}`}
+            title={proj.title}
+            tag={proj.tag}
+            cover={proj.cover}
+            accent={proj.accent}
+            summary={proj.summary}
+            class="min-h-[280px]"
+          />
+        ))
+      }
+    </div>
+  </PageSection>
+</BaseLayout>

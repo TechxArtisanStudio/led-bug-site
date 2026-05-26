@@ -1,12 +1,20 @@
 ---
 import { ASSETS, SHOP_URL } from '../lib/cdn';
+import { getMessages } from '../lib/i18n';
+import { getLocaleFromPath } from '../lib/locale-from-path';
+import { localePath } from '../i18n/locales';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const m = await getMessages(locale);
+const lp = (p: string) => localePath(locale, p);
 
 const links = [
-  { href: '/#work', label: 'Work' },
-  { href: '/#products', label: 'Products' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'About' },
+  { href: `${lp('/')}#work`, label: m.nav.work },
+  { href: `${lp('/')}#products`, label: m.nav.products },
+  { href: lp('/projects'), label: m.nav.projects },
+  { href: lp('/blog'), label: m.nav.blog },
+  { href: lp('/about'), label: m.nav.about },
 ];
 ---
 
@@ -14,7 +22,7 @@ const links = [
   class="fixed top-0 z-50 w-full border-b border-cyan-500/20 bg-bg/80 backdrop-blur-md"
 >
   <div class="site-container site-gutter flex h-14 items-center justify-between sm:h-16">
-    <a href="/" class="flex items-center gap-2 shrink-0">
+    <a href={lp('/')} class="flex items-center gap-2 shrink-0">
       <img
         src={ASSETS.logo}
         alt="LED-Bug"
@@ -25,7 +33,7 @@ const links = [
       />
     </a>
 
-    <nav class="hidden items-center gap-8 md:flex" aria-label="Main">
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Main">
       {
         links.map((link) => (
           <a
@@ -36,6 +44,7 @@ const links = [
           </a>
         ))
       }
+      <LanguageSwitcher />
     </nav>
 
     <a
@@ -44,17 +53,17 @@ const links = [
       rel="noopener noreferrer"
       class="hidden rounded-full border border-accent/60 bg-accent/10 px-4 py-1.5 text-xs font-medium text-accent transition hover:bg-accent hover:text-white sm:inline-block"
     >
-      Shop
+      {m.nav.shop}
     </a>
 
     <details class="relative md:hidden">
       <summary
         class="list-none cursor-pointer rounded-lg border border-white/10 px-3 py-2 text-sm text-white/80 [&::-webkit-details-marker]:hidden"
       >
-        Menu
+        {m.nav.menu}
       </summary>
       <div
-        class="absolute right-0 mt-2 w-48 rounded-xl border border-white/10 bg-surface p-2 shadow-xl"
+        class="absolute right-0 mt-2 w-52 rounded-xl border border-white/10 bg-surface p-2 shadow-xl"
       >
         {
           links.map((link) => (
@@ -66,13 +75,16 @@ const links = [
             </a>
           ))
         }
+        <div class="mt-2 border-t border-white/10 px-2 pt-2">
+          <LanguageSwitcher />
+        </div>
         <a
           href={SHOP_URL}
           target="_blank"
           rel="noopener noreferrer"
           class="mt-1 block rounded-lg bg-accent px-3 py-2 text-sm font-medium text-white hover:bg-accent/90"
         >
-          Shop
+          {m.nav.shop}
         </a>
       </div>
     </details>

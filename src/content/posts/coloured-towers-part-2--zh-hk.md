@@ -1,4 +1,5 @@
 ---
+locale: zh-hk
 title: "The Joys of Colour, Technology and Light"
 subtitle: "Part 2 — Technical Challenges and Experiments"
 date: 2022-07-06
