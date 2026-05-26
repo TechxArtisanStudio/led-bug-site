@@ -11,7 +11,7 @@ import { legacyRedirects } from './src/lib/legacy-redirects.mjs';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://led-bug.com',
-  trailingSlash: 'always',
+  trailingSlash: 'ignore',
   redirects: legacyRedirects,
   vite: {
     plugins: [tailwindcss()],
