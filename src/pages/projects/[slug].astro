@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageSection from '../../components/PageSection.astro';
 import GlowCard from '../../components/home/GlowCard.astro';
 import { projects } from '../../data/projects';
 import {
@@ -38,8 +39,8 @@ const description =
     year: project.year,
   })}
 >
-  <article class="px-4 pb-20 pt-24 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-7xl">
+  <PageSection>
+    <article>
       <a href="/projects" class="text-sm text-white/50 hover:text-cyan-400">← All projects</a>
       <p
         class="mt-6 font-mono text-xs uppercase tracking-widest"
@@ -141,6 +142,6 @@ const description =
           </section>
         )
       }
-    </div>
-  </article>
+    </article>
+  </PageSection>
 </BaseLayout>

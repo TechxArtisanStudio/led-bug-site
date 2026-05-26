@@ -1,0 +1,14 @@
+---
+interface Props {
+  class?: string;
+  innerClass?: string;
+}
+
+const { class: className, innerClass } = Astro.props;
+---
+
+<section class:list={['site-gutter pb-20 pt-24', className]}>
+  <div class:list={['site-container', innerClass]}>
+    <slot />
+  </div>
+</section>

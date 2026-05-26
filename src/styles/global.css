@@ -41,6 +41,15 @@ body {
   overflow-x: hidden;
 }
 
+/* Shared horizontal rhythm — matches Nav / Footer */
+.site-gutter {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.site-container {
+  @apply mx-auto w-full max-w-7xl;
+}
+
 .scanlines {
   background-image: repeating-linear-gradient(
     0deg,

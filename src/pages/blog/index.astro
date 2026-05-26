@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageSection from '../../components/PageSection.astro';
 import PostCard from '../../components/blog/PostCard.astro';
 import { getCollection } from 'astro:content';
 import { postSlug } from '../../lib/posts';
@@ -18,30 +19,28 @@ const cover = posts[0]?.data.cover ?? img('blog/coloured-towers/part-1-journey-i
   image={cover}
   imageAlt="LED-Bug blog — installation stories and technical deep dives"
 >
-  <section class="px-4 pb-20 pt-24 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-5xl">
-      <p class="font-mono text-xs uppercase tracking-widest text-cyan-400/80">Journal</p>
-      <h1 class="mt-2 text-4xl font-bold text-white sm:text-5xl">Blog</h1>
-      <p class="mt-4 max-w-xl text-white/60">
-        Stories behind our installations — collaborations, experiments, and the technology that
-        powers them.
-      </p>
+  <PageSection>
+    <p class="font-mono text-xs uppercase tracking-widest text-cyan-400/80">Journal</p>
+    <h1 class="mt-2 text-4xl font-bold text-white sm:text-5xl">Blog</h1>
+    <p class="mt-4 max-w-xl text-white/60">
+      Stories behind our installations — collaborations, experiments, and the technology that
+      powers them.
+    </p>
 
-      <div class="mt-12 grid gap-6 sm:grid-cols-2">
-        {
-          posts.map((post) => (
-            <PostCard
-              slug={postSlug(post)}
-              title={post.data.title}
-              subtitle={post.data.subtitle}
-              description={post.data.description}
-              cover={post.data.cover}
-              date={post.data.date}
-              categories={post.data.categories}
-            />
-          ))
-        }
-      </div>
+    <div class="mt-12 grid gap-6 sm:grid-cols-2">
+      {
+        posts.map((post) => (
+          <PostCard
+            slug={postSlug(post)}
+            title={post.data.title}
+            subtitle={post.data.subtitle}
+            description={post.data.description}
+            cover={post.data.cover}
+            date={post.data.date}
+            categories={post.data.categories}
+          />
+        ))
+      }
     </div>
-  </section>
+  </PageSection>
 </BaseLayout>
