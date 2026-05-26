@@ -1,4 +1,4 @@
-name: Deploy site
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: '22'
           cache: npm
 
       - run: npm ci
@@ -49,5 +49,5 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/deploy-pages@v4
-        id: deployment
+      - id: deployment
+        uses: actions/deploy-pages@v4
