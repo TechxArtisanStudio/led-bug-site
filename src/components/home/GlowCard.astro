@@ -1,0 +1,63 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  tag: string;
+  cover: string;
+  accent: string;
+  summary?: string;
+  class?: string;
+  featured?: boolean;
+}
+
+const {
+  href,
+  title,
+  tag,
+  cover,
+  accent,
+  summary,
+  class: className = '',
+  featured = false,
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    'glow-card group relative block overflow-hidden rounded-2xl bg-surface',
+    featured ? 'min-h-[280px] lg:min-h-full' : 'min-h-[220px]',
+    className,
+  ]}
+  style={`--glow-color: ${accent}`}
+>
+  <img
+    src={cover}
+    alt={title}
+    class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+    loading="lazy"
+    decoding="async"
+  />
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent"
+  >
+  </div>
+  <div class="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+    <span
+      class="font-mono text-[10px] uppercase tracking-widest sm:text-xs"
+      style={`color: ${accent}`}
+    >
+      {tag}
+    </span>
+    <h3 class="mt-1 text-lg font-semibold text-white sm:text-xl">{title}</h3>
+    {
+      summary && (
+        <p class="mt-1 line-clamp-2 text-xs text-white/55 sm:text-sm">{summary}</p>
+      )
+    }
+    <span
+      class="mt-2 inline-block h-0.5 w-0 bg-current transition-all duration-300 group-hover:w-12"
+      style={`color: ${accent}`}
+    ></span>
+  </div>
+</a>

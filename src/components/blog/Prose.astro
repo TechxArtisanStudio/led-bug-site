@@ -1,0 +1,15 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class:list={['blog-body-shell', className]}>
+  <div class="blog-read-column">
+    <div class="post-prose">
+      <slot />
+    </div>
+  </div>
+</div>

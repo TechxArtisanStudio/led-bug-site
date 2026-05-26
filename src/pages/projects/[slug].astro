@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GlowCard from '../../components/home/GlowCard.astro';
+import { projects } from '../../data/projects';
+import {
+  blogSeriesUrl,
+  projectGalleryImages,
+  relatedProjects,
+} from '../../lib/projects';
+import { canonicalUrl, creativeWorkJsonLd } from '../../lib/seo';
+
+export function getStaticPaths() {
+  return projects.map((p) => ({
+    params: { slug: p.slug },
+    props: { project: p },
+  }));
+}
+
+const { project } = Astro.props;
+const gallery = projectGalleryImages(project);
+const related = relatedProjects(project);
+const facts = [project.artist, project.venue, project.year?.toString()].filter(Boolean);
+const description =
+  project.summary ?? `${project.title} — creative lighting installation by TechxArtisan.`;
+---
+
+<BaseLayout
+  title={project.title}
+  description={description}
+  image={project.cover}
+  imageAlt={`${project.title} — ${project.tag} LED installation`}
+  jsonLd={creativeWorkJsonLd({
+    title: project.title,
+    description,
+    url: canonicalUrl(Astro.url.pathname),
+    image: project.cover,
+    artist: project.artist,
+    year: project.year,
+  })}
+>
+  <article class="px-4 pb-20 pt-24 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <a href="/projects" class="text-sm text-white/50 hover:text-cyan-400">← All projects</a>
+      <p
+        class="mt-6 font-mono text-xs uppercase tracking-widest"
+        style={`color: ${project.accent}`}
+      >
+        {project.tag}
+      </p>
+      <h1 class="mt-2 text-4xl font-bold text-white sm:text-5xl">{project.title}</h1>
+
+      {
+        project.summary && (
+          <p class="mt-4 max-w-3xl text-lg text-white/70">{project.summary}</p>
+        )
+      }
+
+      {
+        facts.length > 0 && (
+          <p class="mt-3 font-mono text-xs text-white/45">
+            {facts.join(' · ')}
+          </p>
+        )
+      }
+
+      {
+        (project.blogSeries || project.links?.length) && (
+          <div class="mt-6 flex flex-wrap gap-3">
+            {
+              project.blogSeries && (
+                <a
+                  href={blogSeriesUrl(project.blogSeries)}
+                  class="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:border-cyan-400/40 hover:text-cyan-400"
+                >
+                  Read the full story →
+                </a>
+              )
+            }
+            {
+              project.links?.map((link) => (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 transition hover:border-white/25 hover:text-white"
+                >
+                  {link.label} ↗
+                </a>
+              ))
+            }
+          </div>
+        )
+      }
+
+      <div class="mt-10 overflow-hidden rounded-2xl">
+        <img
+          src={project.cover}
+          alt={project.title}
+          class="aspect-video w-full object-cover"
+        />
+      </div>
+
+      {
+        gallery.length > 0 && (
+          <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {
+              gallery.map((src) => (
+                <img
+                  src={src}
+                  alt=""
+                  class="aspect-[4/3] w-full rounded-xl object-cover"
+                  loading="lazy"
+                />
+              ))
+            }
+          </div>
+        )
+      }
+
+      {
+        related.length > 0 && (
+          <section class="mt-16 border-t border-white/10 pt-12">
+            <h2 class="font-mono text-xs uppercase tracking-widest text-white/40">
+              Related work
+            </h2>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {
+                related.map((p) => (
+                  <GlowCard
+                    href={`/projects/${p.slug}`}
+                    title={p.title}
+                    tag={p.tag}
+                    cover={p.cover}
+                    accent={p.accent}
+                    summary={p.summary}
+                    class="min-h-[220px]"
+                  />
+                ))
+              }
+            </div>
+          </section>
+        )
+      }
+    </div>
+  </article>
+</BaseLayout>

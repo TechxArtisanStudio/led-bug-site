@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ASSETS, SHOP_URL } from '../../lib/cdn';
+import { canonicalUrl, productJsonLd } from '../../lib/seo';
+
+const name = 'LED-Bug Mini';
+const description =
+  'Compact ESP32 LED controller with WLED firmware for addressable RGB strips — ideal for desk builds, prototypes, and smaller installations.';
+---
+
+<BaseLayout
+  title={name}
+  description={description}
+  image={ASSETS.mini.hero}
+  imageAlt="LED-Bug Mini compact WLED LED controller"
+  jsonLd={productJsonLd({
+    name,
+    description,
+    url: canonicalUrl(Astro.url.pathname),
+    image: ASSETS.mini.hero,
+  })}
+>
+  <article class="mx-auto max-w-3xl px-4 pb-20 pt-24 sm:px-6">
+    <a href="/#products" class="text-sm text-white/50 hover:text-cyan-400">← Products</a>
+    <h1 class="mt-6 text-4xl font-bold text-white">{name}</h1>
+    <img src={ASSETS.mini.hero} alt="LED-Bug Mini" class="mt-8 rounded-xl" />
+    <p class="mt-8 text-white/70 leading-relaxed">
+      Compact ESP32 controller with WLED firmware for addressable RGB strips — ideal for desk builds and smaller installations.
+    </p>
+    <a
+      href={SHOP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-8 inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent/90"
+    >
+      Shop now
+    </a>
+    <div class="mt-8 space-y-4">
+      {
+        ASSETS.mini.intros.map((src) => (
+          <img src={src} alt="" class="w-full rounded-lg border border-white/10" />
+        ))
+      }
+    </div>
+  </article>
+</BaseLayout>

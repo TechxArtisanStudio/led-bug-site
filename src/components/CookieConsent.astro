@@ -1,0 +1,120 @@
+---
+import { GA_MEASUREMENT_ID } from '../lib/analytics';
+---
+
+<div
+  id="cookie-consent"
+  class="cookie-consent hidden fixed inset-x-0 bottom-0 z-[70] border-t border-white/10 bg-surface/95 p-4 shadow-2xl backdrop-blur-md sm:p-6"
+  role="dialog"
+  aria-labelledby="cookie-consent-title"
+  aria-describedby="cookie-consent-desc"
+  aria-modal="true"
+>
+  <div class="mx-auto flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <div class="min-w-0">
+      <p id="cookie-consent-title" class="font-mono text-xs uppercase tracking-widest text-cyan-400/80">
+        Cookie preferences
+      </p>
+      <p id="cookie-consent-desc" class="mt-2 text-sm leading-relaxed text-white/65">
+        We use Google Analytics to understand how visitors use the site. Analytics cookies are
+        <strong class="font-medium text-white/80">off by default</strong> — enable them only if
+        you are comfortable with anonymous usage data being collected.
+      </p>
+      <details class="mt-3 text-sm text-white/55">
+        <summary class="cursor-pointer select-none text-white/70 hover:text-cyan-400">
+          Manage settings
+        </summary>
+        <label class="mt-3 flex cursor-pointer items-start gap-3 rounded-lg border border-white/10 bg-bg/50 p-3">
+          <input
+            id="cookie-consent-analytics"
+            type="checkbox"
+            class="mt-0.5 h-4 w-4 rounded border-white/20 bg-bg accent-accent"
+          />
+          <span>
+            <span class="block font-medium text-white/80">Google Analytics</span>
+            <span class="mt-0.5 block text-xs text-white/45">
+              Anonymous page views and traffic sources ({GA_MEASUREMENT_ID}).
+            </span>
+          </span>
+        </label>
+      </details>
+    </div>
+    <div class="flex shrink-0 flex-wrap gap-2 sm:flex-col sm:items-stretch">
+      <button
+        id="cookie-consent-accept"
+        type="button"
+        class="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent/90"
+      >
+        Save preferences
+      </button>
+      <button
+        id="cookie-consent-reject"
+        type="button"
+        class="rounded-full border border-white/15 px-5 py-2.5 text-sm text-white/75 transition hover:border-white/30 hover:text-white"
+      >
+        Essential only
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ measurementId: GA_MEASUREMENT_ID }}>
+  const STORAGE_KEY = 'led-bug-consent';
+  const banner = document.getElementById('cookie-consent');
+  const checkbox = document.getElementById('cookie-consent-analytics');
+  const acceptBtn = document.getElementById('cookie-consent-accept');
+  const rejectBtn = document.getElementById('cookie-consent-reject');
+
+  function readConsent() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function writeConsent(analytics) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics, ts: Date.now() }));
+  }
+
+  function hideBanner() {
+    banner?.classList.add('hidden');
+  }
+
+  function showBanner() {
+    if (!banner) return;
+    const saved = readConsent();
+    if (checkbox instanceof HTMLInputElement) {
+      checkbox.checked = Boolean(saved?.analytics);
+    }
+    banner.classList.remove('hidden');
+  }
+
+  function applyConsent(analytics) {
+    writeConsent(analytics);
+    hideBanner();
+
+    if (analytics && typeof window.__loadGa4 === 'function') {
+      window.__loadGa4();
+    } else if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', { analytics_storage: 'denied' });
+    }
+  }
+
+  acceptBtn?.addEventListener('click', () => {
+    const analytics = checkbox instanceof HTMLInputElement ? checkbox.checked : false;
+    applyConsent(analytics);
+  });
+
+  rejectBtn?.addEventListener('click', () => {
+    if (checkbox instanceof HTMLInputElement) checkbox.checked = false;
+    applyConsent(false);
+  });
+
+  window.addEventListener('open-cookie-consent', showBanner);
+
+  if (location.protocol !== 'file:' && !readConsent()) {
+    showBanner();
+  }
+</script>

@@ -1,0 +1,54 @@
+---
+import { GA_MEASUREMENT_ID } from '../lib/analytics';
+---
+
+<!-- GA4 Consent Mode defaults — analytics blocked until user opts in -->
+<script is:inline define:vars={{ measurementId: GA_MEASUREMENT_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  window.gtag = gtag;
+
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500,
+  });
+
+  const STORAGE_KEY = 'led-bug-consent';
+
+  function readConsent() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
+    }
+  }
+
+  window.__loadGa4 = function loadGa4() {
+    if (window.__ga4Loaded) return;
+    window.__ga4Loaded = true;
+
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    document.head.appendChild(script);
+
+    gtag('js', new Date());
+    gtag('config', measurementId, {
+      anonymize_ip: true,
+      send_page_view: true,
+    });
+  };
+
+  const saved = readConsent();
+  if (saved?.analytics) {
+    window.__loadGa4();
+  }
+</script>

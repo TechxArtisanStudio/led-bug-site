@@ -1,0 +1,90 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PostHero from '../components/blog/PostHero.astro';
+import SeriesNav from '../components/blog/SeriesNav.astro';
+import Prose from '../components/blog/Prose.astro';
+import { SHOP_URL } from '../lib/cdn';
+import { articleJsonLd, canonicalUrl } from '../lib/seo';
+
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  date: Date;
+  authors: string[];
+  categories: string[];
+  cover: string;
+  series?: string;
+  part?: number;
+  prev?: { slug: string; label: string };
+  next?: { slug: string; label: string };
+}
+
+const props = Astro.props;
+const pageHeading = `${props.subtitle} — ${props.title}`;
+const url = canonicalUrl(Astro.url.pathname);
+---
+
+<BaseLayout
+  title={pageHeading}
+  socialTitle={props.title}
+  description={props.description}
+  image={props.cover}
+  imageAlt={props.title}
+  type="article"
+  publishedTime={props.date}
+  authors={props.authors}
+  jsonLd={articleJsonLd({
+    title: props.title,
+    description: props.description,
+    url,
+    image: props.cover,
+    datePublished: props.date,
+    authors: props.authors,
+  })}
+>
+  <article>
+    <PostHero
+      title={props.title}
+      subtitle={props.subtitle}
+      date={props.date}
+      authors={props.authors}
+      categories={props.categories}
+      cover={props.cover}
+      series={props.series}
+      part={props.part}
+    />
+    <SeriesNav
+      series={props.series}
+      part={props.part}
+      prev={props.prev}
+      next={props.next}
+    />
+    <Prose class="py-10 sm:py-14">
+      <slot />
+    </Prose>
+    <footer class="border-t border-white/10 bg-surface/30 py-10">
+      <div class="blog-body-shell">
+        <div class="blog-read-column flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-sm text-white/50">Building with LED-Bug controllers?</p>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="/#products"
+            class="rounded-full border border-white/20 px-4 py-2 text-sm text-white/80 transition hover:border-cyan-400/50 hover:text-cyan-400"
+          >
+            Explore controllers
+          </a>
+          <a
+            href={SHOP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition hover:bg-accent/90"
+          >
+            Shop now
+          </a>
+        </div>
+        </div>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>

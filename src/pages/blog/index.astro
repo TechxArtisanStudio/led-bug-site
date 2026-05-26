@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/blog/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { postSlug } from '../../lib/posts';
+import { img } from '../../lib/cdn';
+
+const posts = (await getCollection('posts')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const cover = posts[0]?.data.cover ?? img('blog/coloured-towers/part-1-journey-in-colour-exhibition-01.webp');
+---
+
+<BaseLayout
+  title="Blog"
+  description="Stories from TechxArtisan installations — collaborations with artists, technical deep dives, and the LED technology behind gallery-scale work."
+  image={cover}
+  imageAlt="LED-Bug blog — installation stories and technical deep dives"
+>
+  <section class="px-4 pb-20 pt-24 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+      <p class="font-mono text-xs uppercase tracking-widest text-cyan-400/80">Journal</p>
+      <h1 class="mt-2 text-4xl font-bold text-white sm:text-5xl">Blog</h1>
+      <p class="mt-4 max-w-xl text-white/60">
+        Stories behind our installations — collaborations, experiments, and the technology that
+        powers them.
+      </p>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2">
+        {
+          posts.map((post) => (
+            <PostCard
+              slug={postSlug(post)}
+              title={post.data.title}
+              subtitle={post.data.subtitle}
+              description={post.data.description}
+              cover={post.data.cover}
+              date={post.data.date}
+              categories={post.data.categories}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

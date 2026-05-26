@@ -1,0 +1,80 @@
+---
+import { ASSETS, SHOP_URL } from '../lib/cdn';
+
+const links = [
+  { href: '/#work', label: 'Work' },
+  { href: '/#products', label: 'Products' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'About' },
+];
+---
+
+<header
+  class="fixed top-0 z-50 w-full border-b border-cyan-500/20 bg-bg/80 backdrop-blur-md"
+>
+  <div class="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-8">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img
+        src={ASSETS.logo}
+        alt="LED-Bug"
+        class="h-7 w-auto sm:h-8"
+        width="120"
+        height="32"
+        loading="eager"
+      />
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Main">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-medium text-white/70 transition hover:text-cyan-400"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <a
+      href={SHOP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hidden rounded-full border border-accent/60 bg-accent/10 px-4 py-1.5 text-xs font-medium text-accent transition hover:bg-accent hover:text-white sm:inline-block"
+    >
+      Shop
+    </a>
+
+    <details class="relative md:hidden">
+      <summary
+        class="list-none cursor-pointer rounded-lg border border-white/10 px-3 py-2 text-sm text-white/80 [&::-webkit-details-marker]:hidden"
+      >
+        Menu
+      </summary>
+      <div
+        class="absolute right-0 mt-2 w-48 rounded-xl border border-white/10 bg-surface p-2 shadow-xl"
+      >
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              class="block rounded-lg px-3 py-2 text-sm text-white/80 hover:bg-white/5 hover:text-cyan-400"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+        <a
+          href={SHOP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-1 block rounded-lg bg-accent px-3 py-2 text-sm font-medium text-white hover:bg-accent/90"
+        >
+          Shop
+        </a>
+      </div>
+    </details>
+  </div>
+</header>

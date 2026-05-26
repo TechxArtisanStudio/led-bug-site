@@ -1,0 +1,49 @@
+---
+interface Props {
+  series?: string;
+  part?: number;
+  prev?: { slug: string; label: string };
+  next?: { slug: string; label: string };
+}
+
+const { series, part, prev, next } = Astro.props;
+---
+
+{
+  (prev || next) && (
+    <nav
+      class="border-y border-white/10 bg-surface/50 py-4"
+      aria-label="Series navigation"
+    >
+      <div class="blog-body-shell">
+        <div class="blog-read-column flex items-center justify-between gap-4">
+        {prev ? (
+          <a
+            href={`/blog/${prev.slug}`}
+            class="text-sm text-white/60 transition hover:text-cyan-400"
+          >
+            ← {prev.label}
+          </a>
+        ) : (
+          <span />
+        )}
+        {series && part && (
+          <span class="hidden font-mono text-xs uppercase tracking-widest text-white/35 sm:inline">
+            {series.replace(/-/g, ' ')} · {part}/2
+          </span>
+        )}
+        {next ? (
+          <a
+            href={`/blog/${next.slug}`}
+            class="text-right text-sm text-white/60 transition hover:text-cyan-400"
+          >
+            {next.label} →
+          </a>
+        ) : (
+          <span />
+        )}
+        </div>
+      </div>
+    </nav>
+  )
+}

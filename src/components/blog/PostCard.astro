@@ -1,0 +1,55 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  cover: string;
+  date: Date;
+  categories: string[];
+  slug: string;
+}
+
+const { title, subtitle, description, cover, date, categories, slug } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-GB', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<a
+  href={`/blog/${slug}`}
+  class="glow-card group relative flex flex-col overflow-hidden rounded-2xl bg-surface"
+  style="--glow-color: #00e5ff"
+>
+  <div class="aspect-[16/10] overflow-hidden">
+    <img
+      src={cover}
+      alt=""
+      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+      loading="lazy"
+    />
+  </div>
+  <div class="flex flex-1 flex-col p-5 sm:p-6">
+    <div class="flex flex-wrap gap-2">
+      {
+        categories.map((cat) => (
+          <span class="font-mono text-[10px] uppercase tracking-widest text-cyan-400/80">
+            {cat}
+          </span>
+        ))
+      }
+    </div>
+    <h2 class="mt-2 text-xl font-semibold text-white group-hover:text-cyan-100 sm:text-2xl">
+      {title}
+    </h2>
+    <p class="mt-1 text-sm text-white/50">{subtitle}</p>
+    <p class="mt-3 line-clamp-2 flex-1 text-sm leading-relaxed text-white/60">
+      {description}
+    </p>
+    <time class="mt-4 font-mono text-xs text-white/35" datetime={date.toISOString()}>
+      {formattedDate}
+    </time>
+  </div>
+</a>

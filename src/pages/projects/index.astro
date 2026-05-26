@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/projects';
+import GlowCard from '../../components/home/GlowCard.astro';
+import { img } from '../../lib/cdn';
+---
+
+<BaseLayout
+  title="Projects"
+  description="Gallery-scale and studio LED installations by TechxArtisan — interactive towers, kinetic sculptures, and custom firmware powered by LED-Bug controllers."
+  image={img('projects/coloured-towers/cover.webp')}
+  imageAlt="Coloured Towers interactive LED installation at The Bowes Museum"
+>
+  <section class="px-4 pb-20 pt-24 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <h1 class="text-4xl font-bold text-white">Projects</h1>
+      <p class="mt-3 max-w-xl text-white/60">
+        Installations powered by LED-Bug controllers and custom firmware.
+      </p>
+      <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          projects.map((p) => (
+            <GlowCard
+              href={`/projects/${p.slug}`}
+              title={p.title}
+              tag={p.tag}
+              cover={p.cover}
+              accent={p.accent}
+              summary={p.summary}
+              class="min-h-[280px]"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
