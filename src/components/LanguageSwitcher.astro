@@ -5,9 +5,10 @@ import { localePath, stripLocalePath } from '../i18n/locales';
 
 interface Props {
   variant?: 'default' | 'menu';
+  languageLabel?: string;
 }
 
-const { variant = 'default' } = Astro.props;
+const { variant = 'default', languageLabel = 'Language' } = Astro.props;
 const current = getLocaleFromPath(Astro.url.pathname);
 const basePath = stripLocalePath(Astro.url.pathname);
 
@@ -21,11 +22,11 @@ const selectClass =
 ---
 
 <div class:list={['relative', variant === 'menu' && 'w-full']}>
-  <label class="sr-only">Language</label>
+  <label class="sr-only">{languageLabel}</label>
   <select
     class={selectClass}
     style={variant === 'menu' ? { backgroundImage: chevronSvg } : undefined}
-    aria-label="Language"
+    aria-label={languageLabel}
   >
     {
       locales.map((code) => {

@@ -1,7 +1,7 @@
 ---
-locale: zh-tw
-title: "The Joys of Colour, Technology and Light"
-subtitle: "Part 2 — Technical Challenges and Experiments"
+locale: zh-cn
+title: "色彩、科技與光影的樂趣"
+subtitle: "第二部分 — 技術挑戰與實驗"
 date: 2022-07-06
 authors:
   - TechxArtisan
@@ -11,89 +11,89 @@ categories:
 series: coloured-towers
 part: 2
 cover: https://assets.led-bug.com/images/blog/coloured-towers/part-2-technical-process-diagram.webp
-description: Jetson Nano colour detection, FastLED control, and powering 5,760 LEDs per pillar for Dave Bramston's Coloured Towers.
+description: Jetson Nano 色彩檢測、FastLED 控制，以及為 Dave Bramston 的《彩色塔》每根立柱驅動 5,760 顆 LED。
 ---
 
-In this post, we dive into the technical side of building the 4-metre-tall LED towers for British artist Dave Bramston. If you're curious about the creative backstory behind this collaboration and how we worked together to create the *Coloured Towers* during the pandemic for The Bowes Museum in the UK, check out [Part 1: Story Behind the Artwork](/blog/coloured-towers-part-1/).
+在這篇文章中，我們將深入探討為英國藝術家 Dave Bramston 建造 4 米高 LED 塔的技術細節。如果你好奇這次合作的創意背景，以及我們如何在疫情期間為英國 The Bowes Museum 創作《彩色塔》(*Coloured Towers*)，請查看[第一部分：作品背後的故事](/blog/coloured-towers-part-1/)。
 
-When it came to realising this art installation, there were several technical hurdles we needed to overcome at TechxArtisan. The essential hardware we used included Nvidia's **Jetson Nano**—a low-power, GPU-backed microcomputer perfect for running AI algorithms—and the **ESP32**, a widely used microcontroller unit (MCU) that effectively manages communication between the host computer and LED light units using the [FastLED](https://fastled.io/) library.
+在實現這件藝術裝置時，TechxArtisan 需要克服 several 技術難題。我們使用的核心硬件包括 Nvidia 的 **Jetson Nano**——一款低功耗、帶 GPU 的微型計算機，非常適合運行 AI 算法——以及 **ESP32**，這是一款廣泛使用的微控制器單元 (MCU)，能夠利用 [FastLED](https://fastled.io/) 庫有效管理主機計算機與 LED 燈單元之間的通信。
 
-Here's a brief overview of the process:
+以下是流程的簡要概述：
 
-1. **AI algorithms** on the Jetson Nano detect the clothes people are wearing via a camera.
-2. **K-means clustering** is used to extract the dominant colour of their clothes.
-3. The extracted RGB values are sent to the ESP32, which controls the LED strips attached to the artwork.
+1. Jetson Nano 上的 **AI 算法**通過攝像頭檢測人們穿著的衣服。
+2. 使用 **K-means 聚類**提取衣服的主色調。
+3. 提取的 RGB 值被髮送到 ESP32，由它控制附著在藝術品上的 LED 燈帶。
 
-![Technical process diagram](https://assets.led-bug.com/images/blog/coloured-towers/part-2-technical-process-diagram.webp)
+![技術流程圖](https://assets.led-bug.com/images/blog/coloured-towers/part-2-technical-process-diagram.webp)
 
-*The technical process.*
+*技術流程。*
 
-Now, let's break down some of the most interesting technical challenges we encountered.
+現在，讓我們分解一下遇到的一些最有趣的技術挑戰。
 
-### Detecting Clothes with Nvidia Jetson Nano
+### 使用 Nvidia Jetson Nano 檢測衣物
 
-The Jetson Nano allowed us to run open-source AI models trained to detect human clothing. The process involves capturing each image frame from a camera, dividing it into a matrix of 10x16 grids, and running a model to identify which grids match our target—clothes, in this case. Although the model is designed to detect a range of objects, including those on the **MHP Class list**, we specifically used it for clothes detection.
+Jetson Nano 使我們能夠運行經過訓練的開源 AI 模型來檢測人類衣物。該過程包括從攝像頭捕獲每幀圖像，將其劃分為 10×16 的網格矩陣，並運行模型來識別哪些網格與我們的目標匹配——在本例中是衣物。雖然該模型設計用於檢測包括 **MHP Class 列表**在內的多種對象，但我們專門將其用於衣物檢測。
 
-### Translating Colours Between Reality and Digital
+### 在現實與數字之間轉換色彩
 
-Human vision perceives colour through reflected light, but machines "see" colours by capturing images and converting them into digital codes. Here's where the tricky part comes in—cameras don't always capture colours accurately due to factors like lighting, focus, white balance, and exposure settings. We aimed to bridge this gap and capture colours as close to reality as possible.
+人類視覺通過反射光感知色彩，但機器通過捕獲圖像並將其轉換為數字代碼來"看到"色彩。棘手之處在於——由於光照、焦距、白平衡和曝光設置等因素，攝像頭並不總是能準確捕捉色彩。我們的目標是彌合這一差距，儘可能真實地捕捉色彩。
 
-![Colour checker board](https://assets.led-bug.com/images/blog/coloured-towers/part-2-colour-checker-board.webp)
+![色彩校準板](https://assets.led-bug.com/images/blog/coloured-towers/part-2-colour-checker-board.webp)
 
-*Using a colour checker board to align digital colours with reality.*
+*使用色彩校準板將數字色彩與現實對齊。*
 
-Once the machine detects a colour, we apply k-means clustering to extract the dominant colour from the clothes. These RGB values are then averaged and sent to the LED controller.
+一旦機器檢測到色彩，我們就應用 k-means 聚類從衣物中提取主色調。然後對這些 RGB 值進行平均，併發送到 LED 控制器。
 
-### LED Colours and the RGB Problem
+### LED 色彩與 RGB 問題
 
-The LED light strips (ws281x series) we used can mix red, green, and blue (RGB) channels to create a wide range of colours. But there are some limitations:
+我們使用的 LED 燈帶（ws281x 系列）可以混合紅、綠、藍（RGB）通道來創造廣泛的色彩範圍。但也存在一些限制：
 
-- LED lights struggle to represent greys and blacks if a visitor's clothes are dark. The LEDs simply reduce overall brightness.
-- Our ws281x strips tend to skew slightly blue, which meant we had to fine-tune the colour balance in software to get the shades just right.
+- 如果參觀者的衣服顏色較深，LED 燈難以表現灰色和黑色。LED 只是降低整體亮度。
+- 我們的 ws281x 燈帶傾向於偏藍，這意味著我們必須在軟件中微調色彩平衡以獲得恰到好處的色調。
 
-![Colour detection testing](https://assets.led-bug.com/images/blog/coloured-towers/part-2-colour-detection-testing.webp)
+![色彩檢測測試](https://assets.led-bug.com/images/blog/coloured-towers/part-2-colour-detection-testing.webp)
 
-*Testing the stability of the colour detection programme.*
+*測試色彩檢測程序的穩定性。*
 
-There's also an interesting feedback loop in play: when the machine detects the colour of someone's clothes, it projects a corresponding LED light colour, which in turn enhances the clothes' original hue. This creates a dynamic, iterative process that makes the interaction more fun, especially with multiple participants wearing different colours.
+還有一個有趣的反饋循環在起作用：當機器檢測到某人衣服的顏色時，它會投射相應的 LED 光色，這反過來又增強了衣服的原始色調。這創造了一個動態的、迭代的過程，使互動更加有趣，尤其是當多名參與者穿著不同顏色的衣服時。
 
-### Powering All Those LED Strips
+### 為所有 LED 燈帶供電
 
-Lighting up that many LED strips safely and efficiently was no small feat. Each of the four pillars required careful power calculations to ensure the system could handle the load without any issues. Here's a quick breakdown:
+安全高效地點亮這麼多 LED 燈帶絕非易事。四根立柱中的每一根都需要仔細的功率計算，以確保系統能夠承受負載而不會出現任何問題。以下是簡要分解：
 
-For each pillar:
+每根立柱：
 
-- **24 LED strips** × 4 metres per strip = **96 metres** of LEDs per pillar
-- **96 metres** × 60 LEDs per metre = **5,760 LEDs**
-- Each strip uses **4 amps** at full power (white light)
-- So, **24 strips** × 4 amps = **96 amps** required for one pillar
-- 96 amps × **12V** = **1,152W** per pillar
+- **24 條 LED 燈帶** × 每條 4 米 = 每根立柱 **96 米** LED
+- **96 米** × 每米 60 顆 LED = **5,760 顆 LED**
+- 每條燈帶在全功率（白光）下使用 **4 安培**
+- 因此，**24 條燈帶** × 4 安培 = 一根立柱需要 **96 安培**
+- 96 安培 × **12V** = 每根立柱 **1,152W**
 
-This adds up to around **4,600W** when all four pillars are powered at full intensity. However, most of the light animations we created consume significantly less power, since we rarely use full white light. Nevertheless, building in some redundancy ensures the system remains safe and stable.
+當四根立柱全功率運行時，總功率約為 **4,600W**。然而，我們創建的大多數燈光動畫消耗的功率要低得多，因為我們很少使用全白光。儘管如此，建立一些冗餘可以確保系統保持安全穩定。
 
-![Connecting the power supply](https://assets.led-bug.com/images/blog/coloured-towers/part-2-power-supply-connection.webp)
+![連接電源](https://assets.led-bug.com/images/blog/coloured-towers/part-2-power-supply-connection.webp)
 
-*Carefully connecting the power supply.*
+*小心連接電源。*
 
-For the technically inclined, here's a snippet from our FastLED code:
+對於技術愛好者，以下是我們 FastLED 代碼的片段：
 
 ```cpp
 const uint8_t kMatrixWidth = 12;
 const uint8_t kMatrixHeight = 80;
 ```
 
-This allowed us to control **12 x 80 = 960 pixels** per pillar.
+這使我們能夠控制每根立柱 **12 × 80 = 960 個像素**。
 
-### Final Thoughts
+### 結語
 
-For more in-depth technical insights, check out my post in the FastLED community on Reddit. I'd like to give a shout-out to **Quindor** and **Charles Goodwin** for their support and upvotes. Collaborating with Dave Bramston and The Bowes Museum has been an incredibly fulfilling experience, and we're eager to continue pushing the boundaries of art and technology.
+如需更深入的技術見解，請查看我在 Reddit FastLED 社區的發帖。我要特別感謝 **Quindor** 和 **Charles Goodwin** 的支持和點贊。與 Dave Bramston 和 The Bowes Museum 的合作是一次極其充實的經歷，我們渴望繼續突破藝術與技術的邊界。
 
-If you're working on a similar project or are just curious about this type of installation, feel free to reach out—we're always happy to share our knowledge and learn from others in the community.
+如果你正在從事類似項目，或者只是對這類裝置感到好奇，歡迎聯繫我們——我們總是樂於分享知識，並向社區中的其他人學習。
 
-Thanks for reading!
+感謝閱讀！
 
 ---
 
-**At a glance:** Four pillars, ~5 m each · 5,760 LEDs per pillar · Nvidia Jetson Nano + ESP32 · *Journey in Colour*, The Bowes Museum, 18 June – 30 October 2022.
+**概覽：** 四根立柱，每根約 5 米 · 每根立柱 5,760 顆 LED · Nvidia Jetson Nano + ESP32 · *Journey in Colour*，The Bowes Museum，2022 年 6 月 18 日 – 10 月 30 日。
 
-[View the project hub](/projects/coloured-towers) · [Part 1: Story Behind the Artwork](/blog/coloured-towers-part-1/)
+[查看項目中心](/projects/coloured-towers) · [第一部分：作品背後的故事](/blog/coloured-towers-part-1/)

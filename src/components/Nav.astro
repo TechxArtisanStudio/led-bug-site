@@ -33,7 +33,7 @@ const links = [
       />
     </a>
 
-    <nav class="hidden items-center gap-6 md:flex" aria-label="Main">
+    <nav class="hidden items-center gap-6 md:flex" aria-label={m.nav.mainAriaLabel}>
       {
         links.map((link) => (
           <a
@@ -48,7 +48,7 @@ const links = [
 
     <div class="flex shrink-0 items-center gap-2 sm:gap-3">
       <div class="hidden md:block">
-        <LanguageSwitcher />
+        <LanguageSwitcher languageLabel={m.nav.language} />
       </div>
       <a
         href={SHOP_URL}
@@ -85,7 +85,7 @@ const links = [
               <span class="mb-1.5 block px-2 text-[10px] font-medium uppercase tracking-wider text-white/40">
                 {m.nav.language}
               </span>
-              <LanguageSwitcher variant="menu" />
+              <LanguageSwitcher variant="menu" languageLabel={m.nav.language} />
             </div>
             <a
               href={SHOP_URL}

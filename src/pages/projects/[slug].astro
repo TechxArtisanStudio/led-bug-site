@@ -35,7 +35,7 @@ const lp = (p: string) => localePath(locale, p);
   title={project.title}
   description={description}
   image={project.cover}
-  imageAlt={`${project.title} — ${project.tag} LED installation`}
+  imageAlt={`${project.title} — ${project.tag} ${pr.imageAltSuffix}`}
   jsonLd={creativeWorkJsonLd({
     title: project.title,
     description,

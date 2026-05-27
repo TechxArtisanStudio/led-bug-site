@@ -1,7 +1,7 @@
 ---
 locale: it
-title: "The Joys of Colour, Technology and Light"
-subtitle: "Part 1 — Story Behind the Artwork"
+title: "Le Gioie del Colore, della Tecnologia e della Luce"
+subtitle: "Parte 1 — La Storia dietro l'Opera"
 date: 2022-07-06
 authors:
   - TechxArtisan
@@ -11,84 +11,84 @@ categories:
 series: coloured-towers
 part: 1
 cover: https://assets.led-bug.com/images/blog/coloured-towers/part-1-journey-in-colour-exhibition-01.webp
-description: How a WeChat message to Dave Bramston became 5-metre LED towers at The Bowes Museum.
+description: Come un messaggio WeChat a Dave Bramston è diventato torri LED di 5 metri al Bowes Museum.
 ---
 
-Welcome to TechxArtisan, a creative technology studio based in Guangzhou! Back in January 2021, we found ourselves stepping deeper into the New Media Art scene, collaborating with artists who were doing some truly exciting work. These collaborations introduced us to technologies like machine learning, computer vision, and 3D printing—tech that was being explored in educational institutions across China.
+Benvenuti su TechxArtisan, uno studio di tecnologia creativa con sede a Guangzhou! Nel gennaio 2021, ci siamo ritrovati a immergerci sempre di più nella scena della New Media Art, collaborando con artisti che stavano svolgendo un lavoro davvero emozionante. Queste collaborazioni ci hanno fatto conoscere tecnologie come il machine learning, la computer vision e la stampa 3D—tecnologie che venivano esplorate in istituti educativi in tutta Cina.
 
-It was still the first year of the pandemic, and many exhibitions were being cancelled. Despite the challenges, this unexpected downtime gave us a chance to experiment with new ideas, like LED control and object detection. But the real turning point came when I came across Dave Bramston's work.
+Era ancora il primo anno della pandemia, e molte mostre venivano cancellate. Nonostante le sfide, questo tempo inatteso ci ha dato l'opportunità di sperimentare nuove idee, come il controllo LED e il rilevamento di oggetti. Ma il vero punto di svolta è arrivato quando ho scoperto il lavoro di Dave Bramston.
 
-Dave had been creating lighting artworks from waste plastic to promote a zero-waste lifestyle in Guangzhou, and I saw a few of his posts on WeChat (the most popular platform here in China). I was immediately hooked. I reached out, and our conversation on WeChat was the beginning of a truly rewarding collaboration.
+Dave creava opere d'arte luminose da plastica riciclata per promuovere uno stile di vita a rifiuti zero a Guangzhou, e ho visto alcuni suoi post su WeChat (la piattaforma più popolare qui in Cina). Sono rimasto immediatamente affascinato. L'ho contattato, e la nostra conversazione su WeChat è stata l'inizio di una collaborazione davvero gratificante.
 
 ![Dave Bramston's artworks](https://assets.led-bug.com/images/blog/coloured-towers/part-1-dave-bramston-artworks.webp)
 
-*Dave Bramston's artworks.*
+*Le opere d'arte di Dave Bramston.*
 
-Before the pandemic, Dave was already well-known for his work—having delivered over 100 design workshops and creative lectures in China. His studio, Bramston Studio, focuses on fostering original thinking and creative inspiration. It was clear to me that this was the perfect person to team up with for a new project.
+Prima della pandemia, Dave era già molto conosciuto per il suo lavoro—avendo tenuto oltre 100 workshop di design e lezioni creative in Cina. Il suo studio, Bramston Studio, si concentra sul favorire il pensiero originale e l'ispirazione creativa. Era chiaro per me che questa era la persona perfetta con cui unire le forze per un nuovo progetto.
 
 ![One of several video meetings with Dave Bramston](https://assets.led-bug.com/images/blog/coloured-towers/part-1-video-meeting-dave-bramston.webp)
 
-*One of several video meetings with Dave Bramston.*
+*Una delle numerose riunioni video con Dave Bramston.*
 
-Even though international travel was off the table, we didn't let that stop us. Our teams met via video calls, and the brainstorming began. We were excited about how we could merge interactive technology with Dave's artistic vision, and that's how 'Coloured Towers' came to life. This piece was designed to detect the colours of people's clothing and respond by changing the LED colours, creating a vibrant and interactive light display.
+Anche se i viaggi internazionali erano fuori discussione, non abbiamo permesso che ci fermasse. I nostri team si sono incontrati tramite videochiamate, e il brainstorming è iniziato. Eravamo entusiasti di come potessimo fondere la tecnologia interattiva con la visione artistica di Dave, ed è così che è nato 'Colored Towers'. Questa opera era progettata per rilevare i colori dei vestiti delle persone e rispondere cambiando i colori dei LED, creando un display luminoso vibrante e interattivo.
 
 ![The draft of the concept design](https://assets.led-bug.com/images/blog/coloured-towers/part-1-concept-design-draft.webp)
 
-*The draft of the concept design.*
+*La bozza del design concettuale.*
 
-Originally, Dave wanted the towers to respond to people's hats. But after some thought, I tweaked the algorithm to focus on detecting the colours of people's clothing instead. Hats are a bit out of fashion these days—or maybe they're still big in England? Perhaps in a *Downton Abbey* kind of way?
+Originariamente, Dave voleva che le torri rispondessero ai cappelli delle persone. Ma dopo alcune riflessioni, ho modificato l'algoritmo per concentrarsi sul rilevamento dei colori dei vestiti delle persone. I cappelli sono un po' fuori moda in questi giorni—o forse sono ancora grandi in Inghilterra? Forse in un modo tipo *Downton Abbey*?
 
-We soon began building the equipment in China, carefully designing and assembling the LED strips and controllers. After a bit of testing, we shipped everything off to the UK.
+Presto abbiamo iniziato a costruire l'attrezzatura in Cina, progettando e assemblando attentamente le strisce LED e i controller. Dopo alcuni test, abbiamo spedito tutto nel Regno Unito.
 
 ![LED Controllers with UK-flag-shaped 3D-printed cover case](https://assets.led-bug.com/images/blog/coloured-towers/part-1-led-controller-uk-flag-case.webp)
 
-*LED Controllers with our specially designed, UK-flag-shaped, 3D-printed cover case.*
+*Controller LED con la nostra custodia stampata in 3D appositamente progettata a forma di bandiera del Regno Unito.*
 
-With the tech side handled, Dave worked his magic with fabrics, transforming these electrical components into beautiful light-based artworks.
+Con il lato tecnico gestito, Dave ha fatto la sua magia con i tessuti, trasformando questi componenti elettrici in bellissime opere d'arte basate sulla luce.
 
 ![Pictures of light stands in development](https://assets.led-bug.com/images/blog/coloured-towers/part-1-light-stands-development.webp)
 
-*Pictures of light stands in development.*
+*Immagini dei supporti luminosi in fase di sviluppo.*
 
-As the project evolved, Dave decided to scale it up for an exhibition he was curating at The Bowes Museum in the summer of 2022. Our studio couldn't have been more thrilled! We envisioned these towering LED installations—each around 5 metres tall—lighting up the museum in stunning displays of colour.
+Con l'evolversi del progetto, Dave ha deciso di ingrandirlo per una mostra che stava curando al Bowes Museum nell'estate del 2022. Il nostro studio non poteva essere più entusiasta! Abbiamo immaginato queste installazioni LED torreggianti—ciascuna alta circa 5 metri—che illuminavano il museo in straordinarie esposizioni di colore.
 
 ![Light Tower Design](https://assets.led-bug.com/images/blog/coloured-towers/part-1-light-tower-design.webp)
 
-*Light tower design.*
+*Design della torre luminosa.*
 
-After a month of building and testing in China, we sent everything over to the UK in March 2022. Here's a sneak peek of some final testing at our studio before shipment:
+Dopo un mese di costruzione e test in Cina, abbiamo spedito tutto nel Regno Unito nel marzo 2022. Ecco un'anteprima di alcuni test finali nel nostro studio prima della spedizione:
 
 ![Final test at studio — view 1](https://assets.led-bug.com/images/blog/coloured-towers/part-1-studio-final-test-01.webp)
 ![Final test at studio — view 2](https://assets.led-bug.com/images/blog/coloured-towers/part-1-studio-final-test-02.webp)
 
-*A final test at TechxArtisan studio, China, before shipment to the UK.*
+*Un test finale nello studio TechxArtisan, Cina, prima della spedizione nel Regno Unito.*
 
-Once everything arrived safely in the UK, Dave and his team, along with the staff at The Bowes Museum, got to work installing the lights. Seeing the collaboration come to life from afar was such a fulfilling experience.
+Una volta che tutto è arrivato sano e salvo nel Regno Unito, Dave e il suo team, insieme allo staff del Bowes Museum, hanno iniziato a installare le luci. Vedere la collaborazione prendere vita da lontano è stata un'esperienza così soddisfacente.
 
 ![Remote installation kickoff meeting](https://assets.led-bug.com/images/blog/coloured-towers/part-1-remote-installation-kickoff.webp)
 
-*Meeting with the Bramston Studio and Bowes Museum teams remotely to kick off the installation.*
+*Riunione con i team di Bramston Studio e Bowes Museum da remoto per avviare l'installazione.*
 
 ![Museum team installing LED strips](https://assets.led-bug.com/images/blog/coloured-towers/part-1-museum-installing-led-strips.webp)
 
-*The Museum team installing LED strips in the exhibition gallery.*
+*Il team del museo installa le strisce LED nella galleria della mostra.*
 
 ![Installation team photo](https://assets.led-bug.com/images/blog/coloured-towers/part-1-installation-team-photo.webp)
 
-*Can you spot me in this picture?*
+*Riesci a individuarmi in questa foto?*
 
-The exhibition, *Journey in Colour*, officially opened on 18 June and runs until 30 October. I must admit, my only real disappointment was not being able to attend the opening in person. However, seeing photos of visitors enjoying the final installation has been just as rewarding.
+La mostra, *Journey in Colour*, ha aperto ufficialmente il 18 giugno e rimane aperta fino al 30 ottobre. Devo ammettere che la mia unica vera delusione è stata non poter partecipare all'apertura di persona. Tuttavia, vedere le foto dei visitatori che godono dell'installazione finale è stato altrettanto gratificante.
 
 ![Journey in Colour exhibition — view 1](https://assets.led-bug.com/images/blog/coloured-towers/part-1-journey-in-colour-exhibition-01.webp)
 ![Journey in Colour exhibition — view 2](https://assets.led-bug.com/images/blog/coloured-towers/part-1-journey-in-colour-exhibition-02.webp)
 
-*Visitors enjoying the installation at The Bowes Museum.*
+*I visitatori che godono dell'installazione al Bowes Museum.*
 
-I'm immensely grateful to the photographer who captured these moments, and to Dave for inviting me to be part of this incredible collaboration. Although I haven't met the Bramston Studio or Museum teams in person yet, I'm already looking forward to more creative projects together in the future—whether in China or the UK.
+Sono immensamente grato al fotografo che ha catturato questi momenti, e a Dave per avermi invitato a far parte di questa incredibile collaborazione. Anche se non ho ancora incontrato di persona i team di Bramston Studio o del museo, non vedo l'ora di altri progetti creativi insieme in futuro—sia in Cina che nel Regno Unito.
 
-If you'd like to dive into the more technical aspects of this project, be sure to check out [Part 2: Technical Challenges and Experiments](/blog/coloured-towers-part-2/).
+Se vuoi approfondire gli aspetti più tecnici di questo progetto, assicurati di controllare [Parte 2: Sfide e Esperimenti Tecnici](/blog/coloured-towers-part-2/).
 
-## Watch & explore
+## Guarda ed esplora
 
 - [Museum showcase (YouTube Short)](https://youtube.com/shorts/KyrteRpLcpw)
 - [Behind the scenes — LED setup before shipping to the UK (YouTube Short)](https://youtube.com/shorts/uxvQTEgr8fY)

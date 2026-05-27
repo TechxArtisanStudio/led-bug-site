@@ -1,7 +1,7 @@
 ---
 locale: ja
-title: "The Joys of Colour, Technology and Light"
-subtitle: "Part 1 — Story Behind the Artwork"
+title: "色彩、テクノロジー、光の喜び"
+subtitle: "パート1 — アートワークの裏側にある物語"
 date: 2022-07-06
 authors:
   - TechxArtisan
@@ -11,59 +11,59 @@ categories:
 series: coloured-towers
 part: 1
 cover: https://assets.led-bug.com/images/blog/coloured-towers/part-1-journey-in-colour-exhibition-01.webp
-description: How a WeChat message to Dave Bramston became 5-metre LED towers at The Bowes Museum.
+description: Dave BramstonへのWeChatメッセージが、The Bowes Museumの5メートルLEDタワーになったまでの物語。
 ---
 
-Welcome to TechxArtisan, a creative technology studio based in Guangzhou! Back in January 2021, we found ourselves stepping deeper into the New Media Art scene, collaborating with artists who were doing some truly exciting work. These collaborations introduced us to technologies like machine learning, computer vision, and 3D printing—tech that was being explored in educational institutions across China.
+TechxArtisanへようこそ。Guangzhouを拠点とするクリエイティブテクノロジースタジオです！2021年1月、私たちはニューメディアアートの世界へ一歩踏み込み、本当にエキサイティングな活動をしていたアーティストたちとのコラボレーションを始めました。これらのコラボレーションを通じて、機械学習、コンピュータビジョン、3Dプリンティングといった技術に触れることができました。これらは中国の教育機関で探求されていた技術でした。
 
-It was still the first year of the pandemic, and many exhibitions were being cancelled. Despite the challenges, this unexpected downtime gave us a chance to experiment with new ideas, like LED control and object detection. But the real turning point came when I came across Dave Bramston's work.
+まだパンデミックの最初の年で、多くの展覧会が中止されていました。困難な状況にもかかわらず、この予期せぬ余暇が、LED制御や物体検出といった新しいアイデアを実験する機会を与えてくれました。しかし、本当の転換点となったのは、Dave Bramstonの作品に出会ったときでした。
 
-Dave had been creating lighting artworks from waste plastic to promote a zero-waste lifestyle in Guangzhou, and I saw a few of his posts on WeChat (the most popular platform here in China). I was immediately hooked. I reached out, and our conversation on WeChat was the beginning of a truly rewarding collaboration.
+DaveはGuangzhouでゼロウェイストなライフスタイルを推進するため、廃プラスチックから照明アート作品を制作していました。私はWeChat（中国で最も人気のあるプラットフォーム）で彼の投稿をいくつか見かけました。すぐに心を掴まれました。連絡を取り、WeChatでの会話が実りあるコラボレーションの始まりとなりました。
 
 ![Dave Bramston's artworks](https://assets.led-bug.com/images/blog/coloured-towers/part-1-dave-bramston-artworks.webp)
 
 *Dave Bramston's artworks.*
 
-Before the pandemic, Dave was already well-known for his work—having delivered over 100 design workshops and creative lectures in China. His studio, Bramston Studio, focuses on fostering original thinking and creative inspiration. It was clear to me that this was the perfect person to team up with for a new project.
+パンデミック以前、Daveはすでにその活動で有名でした。中国で100以上のデザインワークショップやクリエイティブな講演を行っていました。彼のスタジオ、Bramston Studioは、独創的な思考と創造的なインスピレーションの醸成に焦点を当てています。これは新しいプロジェクトのために組むのに最適な人物だと、私には明らかでした。
 
 ![One of several video meetings with Dave Bramston](https://assets.led-bug.com/images/blog/coloured-towers/part-1-video-meeting-dave-bramston.webp)
 
 *One of several video meetings with Dave Bramston.*
 
-Even though international travel was off the table, we didn't let that stop us. Our teams met via video calls, and the brainstorming began. We were excited about how we could merge interactive technology with Dave's artistic vision, and that's how 'Coloured Towers' came to life. This piece was designed to detect the colours of people's clothing and respond by changing the LED colours, creating a vibrant and interactive light display.
+国際旅行は不可能でしたが、それを止めることはありませんでした。私たちのチームはビデオ通話で会い、ブレインストーミングが始まりました。インタラクティブなテクノロジーとDaveの芸術的ビジョンをどう融合できるかについて興奮していました。そして「Coloured Towers」が誕生しました。この作品は、人々の服装の色を検出し、それに応じてLEDの色を変えることで、鮮やかでインタラクティブな光のディスプレイを作り出すように設計されました。
 
 ![The draft of the concept design](https://assets.led-bug.com/images/blog/coloured-towers/part-1-concept-design-draft.webp)
 
 *The draft of the concept design.*
 
-Originally, Dave wanted the towers to respond to people's hats. But after some thought, I tweaked the algorithm to focus on detecting the colours of people's clothing instead. Hats are a bit out of fashion these days—or maybe they're still big in England? Perhaps in a *Downton Abbey* kind of way?
+もともと、Daveはタワーが人々の帽子に反応することを望んでいました。しかし少し考えた後、アルゴリズムを調整して、人々の服装の色を検出することに焦点を当てるようにしました。帽子は最近あまり流行っていません。あるいは、イギリスではまだ人気があるのでしょうか？おそらく*Downton Abbey*的な感じでしょうか？
 
-We soon began building the equipment in China, carefully designing and assembling the LED strips and controllers. After a bit of testing, we shipped everything off to the UK.
+私たちはすぐに中国で機材の製作を始め、LEDストリップとコントローラーを慎重に設計・組み立てました。少しテストした後、すべてをイギリスへ発送しました。
 
 ![LED Controllers with UK-flag-shaped 3D-printed cover case](https://assets.led-bug.com/images/blog/coloured-towers/part-1-led-controller-uk-flag-case.webp)
 
 *LED Controllers with our specially designed, UK-flag-shaped, 3D-printed cover case.*
 
-With the tech side handled, Dave worked his magic with fabrics, transforming these electrical components into beautiful light-based artworks.
+技術面を任せてもらったことで、Daveは布地で魔法を働かせ、これらの電気部品を美しい光のアート作品に変えました。
 
 ![Pictures of light stands in development](https://assets.led-bug.com/images/blog/coloured-towers/part-1-light-stands-development.webp)
 
 *Pictures of light stands in development.*
 
-As the project evolved, Dave decided to scale it up for an exhibition he was curating at The Bowes Museum in the summer of 2022. Our studio couldn't have been more thrilled! We envisioned these towering LED installations—each around 5 metres tall—lighting up the museum in stunning displays of colour.
+プロジェクトが進むにつれ、Daveは2022年夏にThe Bowes Museumでキュレーションする展覧会のために規模を拡大することを決めました。私たちのスタジオはこれ以上ないほど興奮しました！高さ約5メートルのこれらの巨大なLEDインスタレーションが、博物館を驚くべき色彩のディスプレイで照らす様子を想像しました。
 
 ![Light Tower Design](https://assets.led-bug.com/images/blog/coloured-towers/part-1-light-tower-design.webp)
 
 *Light tower design.*
 
-After a month of building and testing in China, we sent everything over to the UK in March 2022. Here's a sneak peek of some final testing at our studio before shipment:
+中国で1か月の製作とテストの後、2022年3月にすべてをイギリスへ送りました。発送前のスタジオでの最終テストのちら見せです：
 
 ![Final test at studio — view 1](https://assets.led-bug.com/images/blog/coloured-towers/part-1-studio-final-test-01.webp)
 ![Final test at studio — view 2](https://assets.led-bug.com/images/blog/coloured-towers/part-1-studio-final-test-02.webp)
 
 *A final test at TechxArtisan studio, China, before shipment to the UK.*
 
-Once everything arrived safely in the UK, Dave and his team, along with the staff at The Bowes Museum, got to work installing the lights. Seeing the collaboration come to life from afar was such a fulfilling experience.
+すべてが無事にイギリスに到着すると、Daveと彼のチーム、そしてThe Bowes Museumのスタッフが照明の設置に取り掛かりました。遠くからこのコラボレーションが実現するのを見るのは、とても充実した経験でした。
 
 ![Remote installation kickoff meeting](https://assets.led-bug.com/images/blog/coloured-towers/part-1-remote-installation-kickoff.webp)
 
@@ -77,21 +77,21 @@ Once everything arrived safely in the UK, Dave and his team, along with the staf
 
 *Can you spot me in this picture?*
 
-The exhibition, *Journey in Colour*, officially opened on 18 June and runs until 30 October. I must admit, my only real disappointment was not being able to attend the opening in person. However, seeing photos of visitors enjoying the final installation has been just as rewarding.
+展覧会「Journey in Colour」は6月18日に正式に開幕し、10月30日まで開催されます。正直に言うと、唯一の本当の残念な点は、開幕に直接出席できなかったことです。しかし、完成したインスタレーションを楽しむ来場者の写真を見るのは、同じくらい報われるものでした。
 
 ![Journey in Colour exhibition — view 1](https://assets.led-bug.com/images/blog/coloured-towers/part-1-journey-in-colour-exhibition-01.webp)
 ![Journey in Colour exhibition — view 2](https://assets.led-bug.com/images/blog/coloured-towers/part-1-journey-in-colour-exhibition-02.webp)
 
 *Visitors enjoying the installation at The Bowes Museum.*
 
-I'm immensely grateful to the photographer who captured these moments, and to Dave for inviting me to be part of this incredible collaboration. Although I haven't met the Bramston Studio or Museum teams in person yet, I'm already looking forward to more creative projects together in the future—whether in China or the UK.
+これらの瞬間を捉えてくれた写真家、そしてこの素晴らしいコラボレーションに私を招いてくれたDaveに、心から感謝しています。まだBramston StudioやMuseumのチームとは直接会っていませんが、中国でもイギリスでも、今後さらにクリエイティブなプロジェクトを一緒にできることを楽しみにしています。
 
-If you'd like to dive into the more technical aspects of this project, be sure to check out [Part 2: Technical Challenges and Experiments](/blog/coloured-towers-part-2/).
+このプロジェクトのより技術的な側面に踏み込みたい場合は、[パート2：技術的課題と実験](/blog/coloured-towers-part-2/)をぜひご覧ください。
 
-## Watch & explore
+## 視聴・探索
 
 - [Museum showcase (YouTube Short)](https://youtube.com/shorts/KyrteRpLcpw)
 - [Behind the scenes — LED setup before shipping to the UK (YouTube Short)](https://youtube.com/shorts/uxvQTEgr8fY)
 - [Journey in Colour at The Bowes Museum](https://thebowesmuseum.org.uk/exhibitions/journey-in-colour/)
 - [View this project on our site](/projects/coloured-towers)
-- Related installations: [Moon River](/projects/moon-river) · [Spectrum of Objects](/projects/spectrum-of-objects)
+- 関連インスタレーション: [Moon River](/projects/moon-river) · [Spectrum of Objects](/projects/spectrum-of-objects)

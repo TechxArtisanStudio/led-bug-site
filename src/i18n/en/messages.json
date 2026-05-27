@@ -12,7 +12,8 @@
     "about": "About",
     "shop": "Shop",
     "menu": "Menu",
-    "language": "Language"
+    "language": "Language",
+    "mainAriaLabel": "Main"
   },
   "footer": {
     "tagline": "Creative LED control for installations and makers. A product by TechxArtisan.",
@@ -95,6 +96,7 @@
     "fallbackDescription": "creative lighting installation by TechxArtisan.",
     "readFullStory": "Read the full story →",
     "relatedWork": "Related work",
+    "imageAltSuffix": "LED installation",
     "items": [
       {
         "slug": "coloured-towers",
@@ -280,6 +282,7 @@
     "heading": "Blog",
     "intro": "Stories behind our installations — collaborations, experiments, and the technology that powers them.",
     "readMore": "Read article",
+    "seriesPart": "{series} · Part {part} of {total}",
     "seriesPrev": "Previous",
     "seriesNext": "Next",
     "postFooterCta": "Building with LED-Bug controllers?",

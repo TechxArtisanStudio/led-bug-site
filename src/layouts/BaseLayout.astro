@@ -11,6 +11,7 @@ import { getMessages } from '../lib/i18n';
 import { createLocaleContext } from '../lib/locale-context';
 import { getLocaleFromPath } from '../lib/locale-from-path';
 import { localeMeta, type Locale } from '../i18n/locales';
+import { localeShouldNoindex } from '../lib/locale-status';
 
 interface Props extends PageSeo {
   locale?: Locale;
@@ -29,7 +30,12 @@ const meta = localeMeta[locale];
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <Seo {...seo} locale={locale} ogLocale={meta.ogLocale} />
+    <Seo
+      {...seo}
+      locale={locale}
+      ogLocale={meta.ogLocale}
+      noindex={seo.noindex ?? localeShouldNoindex(locale)}
+    />
     <Analytics />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

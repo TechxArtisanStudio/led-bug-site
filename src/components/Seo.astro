@@ -13,6 +13,7 @@ import {
 } from '../lib/seo';
 import { locales, localeMeta, defaultLocale, localePath, stripLocalePath } from '../i18n/locales';
 import type { Locale } from '../i18n/locales';
+import { localeIsIndexed } from '../lib/locale-status';
 
 interface Props {
   title?: string;
@@ -67,13 +68,15 @@ const structuredData = [
 
 <!-- hreflang -->
 {
-  locales.map((code) => (
-    <link
-      rel="alternate"
-      hreflang={localeMeta[code].htmlLang}
-      href={canonicalUrl(localePath(code, pathBase))}
-    />
-  ))
+  locales
+    .filter((code) => localeIsIndexed(code))
+    .map((code) => (
+      <link
+        rel="alternate"
+        hreflang={localeMeta[code].htmlLang}
+        href={canonicalUrl(localePath(code, pathBase))}
+      />
+    ))
 }
 <link rel="alternate" hreflang="x-default" href={canonicalUrl(localePath(defaultLocale, pathBase))} />
 

@@ -1,0 +1,9 @@
+{
+  "zh-cn": { "qa_passed": true },
+  "zh-tw": { "qa_passed": true },
+  "zh-hk": { "qa_passed": true },
+  "es": { "qa_passed": false },
+  "fr": { "qa_passed": false },
+  "ja": { "qa_passed": false },
+  "it": { "qa_passed": false }
+}

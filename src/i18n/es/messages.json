@@ -1,109 +1,110 @@
 {
   "seo": {
-    "defaultTitle": "LED-Bug — Creative LED Control",
-    "defaultDescription": "WLED · DMX512 · ESP32 LED controllers for gallery installations, makers, and artists. Explore projects, specs, and stories from TechxArtisan.",
+    "defaultTitle": "LED-Bug — Control creativo de LED",
+    "defaultDescription": "Controladores LED WLED · DMX512 · ESP32 para instalaciones en galerías, makers y artistas. Explora proyectos, especificaciones e historias de TechxArtisan.",
     "siteName": "LED-Bug"
   },
   "nav": {
-    "work": "Work",
-    "products": "Products",
-    "projects": "Projects",
+    "work": "Trabajos",
+    "products": "Productos",
+    "projects": "Proyectos",
     "blog": "Blog",
-    "about": "About",
-    "shop": "Shop",
-    "menu": "Menu",
-    "language": "Language"
+    "about": "Acerca de",
+    "shop": "Tienda",
+    "menu": "Menú",
+    "language": "Idioma",
+    "mainAriaLabel": "Principal"
   },
   "footer": {
-    "tagline": "Creative LED control for installations and makers. A product by TechxArtisan.",
-    "connect": "Connect",
-    "order": "Order",
-    "shopNow": "Shop now",
-    "cookieSettings": "Cookie settings",
-    "contact": "Contact",
+    "tagline": "Control creativo de LED para instalaciones y creadores. Un producto de TechxArtisan.",
+    "connect": "Conectar",
+    "order": "Pedir",
+    "shopNow": "Comprar ahora",
+    "cookieSettings": "Configuración de cookies",
+    "contact": "Contacto",
     "copyright": "TechxArtisan · LED-Bug"
   },
   "cookie": {
-    "title": "Cookie preferences",
-    "description": "We use Google Analytics to collect anonymous usage data (page views and traffic sources). Is that OK?",
-    "accept": "Yes",
+    "title": "Preferencias de cookies",
+    "description": "Utilizamos Google Analytics para recopilar datos de uso anónimos (páginas vistas y fuentes de tráfico). ¿Acepta?",
+    "accept": "Sí",
     "decline": "No"
   },
   "home": {
-    "heroImageAlt": "Mechanical Tree — LED installation powered by LED-Bug controllers",
+    "heroImageAlt": "Árbol Mecánico — Instalación LED alimentada por controladores LED-Bug",
     "tagline": "WLED · DMX512 · ESP32",
-    "title": "Creative LED control for installations & makers",
-    "subtitle": "From gallery-scale robotics to desk prototypes — one controller platform that runs WLED out of the box and opens up when you need custom code.",
-    "ctaWork": "See our work",
-    "ctaProducts": "Explore controllers",
-    "scrollToWork": "Scroll to work",
-    "installationsLabel": "Installations",
-    "installationsTitle": "What we've built",
-    "viewAllProjects": "View all projects →",
-    "platformLabel": "Platform",
-    "platformTitle": "One controller platform",
-    "platformBody": "From gallery installations to desk prototypes — LED-Bug controllers run WLED out of the box and open up when you need custom code.",
+    "title": "Control creativo de LED para instalaciones y makers",
+    "subtitle": "Desde robótica a escala de galería hasta prototipos de escritorio — una plataforma de controlador que ejecuta WLED listo para usar y se abre cuando necesitas código personalizado.",
+    "ctaWork": "Ver nuestro trabajo",
+    "ctaProducts": "Explorar controladores",
+    "scrollToWork": "Desplazar al trabajo",
+    "installationsLabel": "Instalaciones",
+    "installationsTitle": "Lo que hemos construido",
+    "viewAllProjects": "Ver todos los proyectos →",
+    "platformLabel": "Plataforma",
+    "platformTitle": "Una plataforma de controladores",
+    "platformBody": "Desde instalaciones en galerías hasta prototipos de escritorio: los controladores LED-Bug ejecutan WLED listo para usar y permiten la personalización cuando necesitas código propio.",
     "chips": [
-      "WLED firmware",
+      "Firmware WLED",
       "DMX512 + MAX485",
-      "ESP32 dev platform"
+      "Plataforma de desarrollo ESP32"
     ],
     "hardwareLabel": "Hardware",
-    "hardwareTitle": "Choose your controller",
+    "hardwareTitle": "Elige tu controlador",
     "srName": "LED-Bug SR",
-    "srBlurb": "Installation-grade. 500–800 LEDs per channel. Dual outputs, DMX512, onboard mic.",
+    "srBlurb": "Grado de instalación. 500–800 LEDs por canal. Salidas duales, DMX512, micrófono integrado.",
     "srBullets": [
-      "ESP32-WROOM · WLED pre-installed",
-      "5V / 12V / 24V strip support",
-      "MAX485 · DMX512 wall washers"
+      "ESP32-WROOM · WLED preinstalado",
+      "Soporte para tiras de 5V / 12V / 24V",
+      "MAX485 · Lámparas de pared DMX512"
     ],
-    "srFullSpecs": "Full specs →",
-    "srAlt": "LED-Bug SR controller",
+    "srFullSpecs": "Especificaciones completas →",
+    "srAlt": "Controlador LED-Bug SR",
     "miniName": "LED-Bug Mini",
-    "miniBlurb": "Compact controller for makers. Same WLED stack in a smaller footprint.",
+    "miniBlurb": "Controlador compacto para makers. El mismo stack WLED en un formato más pequeño.",
     "miniBullets": [
-      "ESP32 · WLED firmware",
-      "Addressable RGB strips",
-      "Arduino / PlatformIO ready"
+      "ESP32 · Firmware WLED",
+      "Tiras RGB direccionables",
+      "Listo para Arduino / PlatformIO"
     ],
-    "miniFullSpecs": "Full specs →",
-    "miniAlt": "LED-Bug Mini controller",
-    "blogLabel": "From the blog",
-    "blogTitle": "Stories & deep dives",
-    "viewAllBlog": "View all →"
+    "miniFullSpecs": "Especificaciones completas →",
+    "miniAlt": "Controlador LED-Bug Mini",
+    "blogLabel": "Del blog",
+    "blogTitle": "Historias y análisis profundos",
+    "viewAllBlog": "Ver todo →"
   },
   "about": {
-    "title": "About",
-    "metaDescription": "LED-Bug is a creative LED control platform by TechxArtisan — ESP32 controllers with WLED, DMX512, and custom firmware for installations and makers.",
-    "imageAlt": "LED-Bug creative LED control by TechxArtisan",
-    "heading": "About",
-    "body": "LED-Bug is a creative LED control platform by TechxArtisan. We build controllers for installations, makers, and artists working with light."
+    "title": "Acerca de",
+    "metaDescription": "LED-Bug es una plataforma creativa de control de LED de TechxArtisan — controladores ESP32 con WLED, DMX512 y firmware personalizado para instalaciones y creadores.",
+    "imageAlt": "Control creativo de LED LED-Bug por TechxArtisan",
+    "heading": "Acerca de",
+    "body": "LED-Bug es una plataforma creativa de control de LED de TechxArtisan. Creamos controladores para instalaciones, creadores y artistas que trabajan con luz."
   },
   "projects": {
-    "indexTitle": "Projects",
-    "metaDescription": "Gallery-scale and studio LED installations by TechxArtisan — interactive towers, kinetic sculptures, and custom firmware powered by LED-Bug controllers.",
-    "imageAlt": "Coloured Towers interactive LED installation at The Bowes Museum",
-    "heading": "Projects",
-    "intro": "Installations powered by LED-Bug controllers and custom firmware.",
-    "backToAll": "← All projects",
-    "artist": "Artist",
-    "venue": "Venue",
-    "year": "Year",
-    "related": "Related projects",
-    "blogSeries": "Blog series",
-    "externalLinks": "Links",
-    "fallbackDescription": "creative lighting installation by TechxArtisan.",
-    "readFullStory": "Read the full story →",
-    "relatedWork": "Related work",
+    "indexTitle": "Proyectos",
+    "metaDescription": "Instalaciones LED a escala de galería y de estudio por TechxArtisan — torres interactivas, esculturas cinéticas y firmware personalizado alimentado por controladores LED-Bug.",
+    "imageAlt": "Instalación LED interactiva Coloured Towers en The Bowes Museum",
+    "heading": "Proyectos",
+    "intro": "Instalaciones alimentadas por controladores LED-Bug y firmware personalizado.",
+    "backToAll": "← Todos los proyectos",
+    "artist": "Artista",
+    "venue": "Lugar",
+    "year": "Año",
+    "related": "Proyectos relacionados",
+    "blogSeries": "Serie de blogs",
+    "externalLinks": "Enlaces",
+    "fallbackDescription": "instalación de iluminación creativa por TechxArtisan.",
+    "readFullStory": "Leer la historia completa →",
+    "relatedWork": "Trabajo relacionado",
     "items": [
       {
         "slug": "coloured-towers",
-        "title": "Coloured Towers",
-        "tag": "Interactive",
+        "title": "Torres de Colores",
+        "tag": "Interactivo",
         "accent": "#f97316",
-        "summary": "Four five-metre pillars of light that read the colours of visitors’ clothing and mirror them in LED — an interactive installation for Dave Bramston’s Journey in Colour at The Bowes Museum.",
+        "summary": "Cuatro pilares de luz de cinco metros que leen los colores de la ropa de los visitantes y los reflejan en LED — una instalación interactiva para Journey in Colour de Dave Bramston en The Bowes Museum.",
         "artist": "Dave Bramston",
-        "venue": "The Bowes Museum, UK",
+        "venue": "The Bowes Museum, Reino Unido",
         "year": 2022,
         "blogSeries": "coloured-towers",
         "related": [
@@ -112,15 +113,15 @@
         ],
         "links": [
           {
-            "label": "Museum showcase (YouTube)",
+            "label": "Presentación del museo (YouTube)",
             "url": "https://youtube.com/shorts/KyrteRpLcpw"
           },
           {
-            "label": "Behind the scenes (YouTube)",
+            "label": "Detrás de cámaras (YouTube)",
             "url": "https://youtube.com/shorts/uxvQTEgr8fY"
           },
           {
-            "label": "Journey in Colour exhibition",
+            "label": "Exposición Journey in Colour",
             "url": "https://thebowesmuseum.org.uk/exhibitions/journey-in-colour/"
           },
           {
@@ -131,10 +132,10 @@
       },
       {
         "slug": "mechanical-tree",
-        "title": "Mechanical Tree",
-        "tag": "Robotics",
+        "title": "Árbol Mecánico",
+        "tag": "Robótica",
         "accent": "#00e5ff",
-        "summary": "A kinetic “mechanical tree” installation combining motion, light, and custom control — built with TechxArtisan’s LED and firmware stack.",
+        "summary": "Una instalación cinética de “árbol mecánico” que combina movimiento, luz y control personalizado, construida con la pila de LED y firmware de TechxArtisan.",
         "artist": "TechxArtisan",
         "year": 2024,
         "related": [
@@ -145,9 +146,9 @@
       {
         "slug": "moon-river",
         "title": "Moon River",
-        "tag": "River",
+        "tag": "Río",
         "accent": "#3b82f6",
-        "summary": "A light installation reflecting Hakka culture through regeneration and repurposing, installed in ancient Hakka houses in Shenzhen with Dave Bramston and SUSTech School of Design.",
+        "summary": "Una instalación de luz que refleja la cultura Hakka a través de la regeneración y la reutilización, instalada en antiguas casas Hakka en Shenzhen con Dave Bramston y la Escuela de Diseño de SUSTech.",
         "artist": "Dave Bramston",
         "venue": "Shenzhen, China",
         "related": [
@@ -157,10 +158,10 @@
       },
       {
         "slug": "spectrum-of-objects",
-        "title": "Spectrum of Objects",
-        "tag": "Spectrum",
+        "title": "Espectro de objetos",
+        "tag": "Espectro",
         "accent": "#a855f7",
-        "summary": "Dave Bramston’s solo exhibition of seven collaborative works — factory leftovers from the Pearl River Delta transformed through light and interaction into a spectrum of forms and colours.",
+        "summary": "Exposición individual de Dave Bramston con siete obras colaborativas: restos de fábrica del Pearl River Delta transformados a través de la luz y la interacción en un espectro de formas y colores.",
         "artist": "Dave Bramston",
         "related": [
           "coloured-towers",
@@ -169,10 +170,10 @@
       },
       {
         "slug": "magic-cube-lamp",
-        "title": "Magic Cube Lamp",
-        "tag": "Cube",
+        "title": "Lámpara Cubo Mágico",
+        "tag": "Cubo",
         "accent": "#ef4444",
-        "summary": "A compact, programmable cube lamp showcasing LED-Bug control — colour, motion, and patterns in a product-ready form factor.",
+        "summary": "Una lámpara cúbica compacta y programable que muestra el control de LED-Bug: color, movimiento y patrones en un factor de forma listo para producción.",
         "artist": "TechxArtisan",
         "related": [
           "led-bug-demos"
@@ -180,10 +181,10 @@
       },
       {
         "slug": "led-bug-demos",
-        "title": "LED-Bug Demos",
-        "tag": "Product",
+        "title": "Demostraciones de LED-Bug",
+        "tag": "Producto",
         "accent": "#22d3ee",
-        "summary": "Live demonstrations of LED-Bug controllers — WLED, DMX512, and ESP32 firmware for installations, makers, and artists working with light.",
+        "summary": "Demostraciones en vivo de controladores LED-Bug: firmware WLED, DMX512 y ESP32 para instalaciones, creadores y artistas que trabajan con luz.",
         "artist": "TechxArtisan",
         "related": [
           "mechanical-tree",
@@ -192,20 +193,20 @@
       },
       {
         "slug": "dreammech-forest",
-        "title": "DreamMech Forest",
-        "tag": "Outdoor",
+        "title": "Bosque DreamMech",
+        "tag": "Exterior",
         "accent": "#22c55e",
-        "summary": "An outdoor installation in Hefei: metal trees with mechanical flowers driven by N20 motors, RGB LED strips, and WiFi-synchronized control across 20–30 blooms.",
+        "summary": "Una instalación al aire libre en Hefei: árboles de metal con flores mecánicas impulsadas por motores N20, tiras de LED RGB y control sincronizado por WiFi en 20–30 flores.",
         "artist": "TechxArtisan",
         "venue": "Hefei, China",
         "gallery": []
       },
       {
         "slug": "the-first-law-of-forest",
-        "title": "The First Law of Forest",
-        "tag": "Installation",
+        "title": "La primera ley del bosque",
+        "tag": "Instalación",
         "accent": "#84cc16",
-        "summary": "Chen Baoyang’s installation on humans, machines, and technology — AI, a robot arm, smoke, and spotlights around the metaphor of a “mechanical tree” and the “forest law.”",
+        "summary": "Instalación de Chen Baoyang sobre humanos, máquinas y tecnología: IA, un brazo robótico, humo y focos en torno a la metáfora de un “árbol mecánico” y la “ley del bosque”.",
         "artist": "Chen Baoyang",
         "related": [
           "mechanical-tree",
@@ -215,10 +216,10 @@
       },
       {
         "slug": "congrats-x",
-        "title": "Congrats X, the Y is in another Z",
-        "tag": "Autonomous",
+        "title": "Felicidades X, la Y está en otra Z",
+        "tag": "Autónomo",
         "accent": "#eab308",
-        "summary": "An AI-driven autonomous car that navigates a randomly generated maze, resets at each exit, and generates a new maze — a collaboration with Chen Baoyang (CAFA) and TechxArtisan.",
+        "summary": "Un coche autónomo impulsado por IA que navega por un laberinto generado aleatoriamente, se reinicia en cada salida y genera un nuevo laberinto — una colaboración con Chen Baoyang (CAFA) y TechxArtisan.",
         "artist": "Chen Baoyang",
         "related": [
           "the-first-law-of-forest"
@@ -227,62 +228,64 @@
       },
       {
         "slug": "hello-5g-light",
-        "title": "Hello 5G Light",
-        "tag": "Anamorphic",
+        "title": "Luz Hello 5G",
+        "tag": "Anamórfico",
         "accent": "#06b6d4",
-        "summary": "Ninety-one LED tubes arranged so that, from a specific viewpoint four metres away, the installation reads “Hello 5G” — with preset and custom colour programs for different occasions.",
+        "summary": "Noventa y un tubos LED dispuestos de tal manera que, desde un punto de vista específico a cuatro metros de distancia, la instalación se lee como “Hello 5G”, con programas de color predefinidos y personalizados para diferentes ocasiones.",
         "gallery": []
       },
       {
         "slug": "relationship",
-        "title": "Relationship",
-        "tag": "Kinetic",
+        "title": "Relación",
+        "tag": "Cinético",
         "accent": "#e879f9",
-        "summary": "With Wang Yuyang: over 300 white LED tubes on motors at both ends, moving in random and patterned rhythms — lights meeting and parting as a metaphor for human connection.",
+        "summary": "Con Wang Yuyang: más de 300 tubos LED blancos en motores en ambos extremos, moviéndose en ritmos aleatorios y con patrones — luces que se encuentran y se separan como metáfora de la conexión humana.",
         "artist": "Wang Yuyang",
         "gallery": []
       },
       {
         "slug": "platos-cube",
-        "title": "Plato's Cube",
-        "tag": "Kinetic",
+        "title": "Cubo de Platón",
+        "tag": "Cinético",
         "accent": "#f472b6",
-        "summary": "Wang Yuyang’s morphing polyhedron: twelve white LED tubes joined by transparent joints, twisting and compressing under program control so the form never repeats.",
+        "summary": "El poliedro metamórfico de Wang Yuyang: doce tubos LED blancos unidos por juntas transparentes, que se retuercen y comprimen bajo control programático para que la forma nunca se repita.",
         "artist": "Wang Yuyang",
         "related": [
-          "relationship"
+          "relación"
         ],
         "gallery": []
       }
-    ]
+    ],
+    "imageAltSuffix": "instalación LED"
   },
   "products": {
-    "back": "← Products",
-    "shopNow": "Shop now",
+    "back": "← Productos",
+    "shopNow": "Comprar ahora",
     "sr": {
       "name": "LED-Bug SR",
-      "metaDescription": "Installation-grade ESP32 LED controller with WLED pre-installed, dual strip outputs, DMX512 via MAX485, onboard microphone for music sync, and 5V/12V/24V strip support.",
-      "imageAlt": "LED-Bug SR WLED and DMX512 LED controller",
-      "body": "ESP32 light controller with WLED pre-installed, dual strip outputs, DMX512 via MAX485, and onboard microphone for music sync."
+      "metaDescription": "Controlador LED ESP32 de grado instalación con WLED preinstalado, salidas duales de tiras, DMX512 vía MAX485, micrófono integrado para sincronización musical, y soporte para tiras de 5V/12V/24V.",
+      "imageAlt": "Controlador LED LED-Bug SR con WLED y DMX512",
+      "body": "Controlador de luces ESP32 con WLED preinstalado, salidas duales de tiras, DMX512 vía MAX485, y micrófono integrado para sincronización musical."
     },
     "mini": {
       "name": "LED-Bug Mini",
-      "metaDescription": "Compact ESP32 LED controller with WLED firmware for addressable RGB strips — ideal for desk builds, prototypes, and smaller installations.",
-      "imageAlt": "LED-Bug Mini compact WLED LED controller",
-      "body": "Compact ESP32 controller with WLED firmware for addressable RGB strips — ideal for desk builds and smaller installations."
+      "metaDescription": "Controlador LED ESP32 compacto con firmware WLED para tiras RGB direccionables — ideal para montajes de escritorio, prototipos e instalaciones más pequeñas.",
+      "imageAlt": "Controlador LED compacto LED-Bug Mini con WLED",
+      "body": "Controlador ESP32 compacto con firmware WLED para tiras RGB direccionables — ideal para montajes de escritorio e instalaciones más pequeñas."
     }
   },
   "blog": {
     "indexTitle": "Blog",
-    "metaDescription": "Stories from TechxArtisan installations — collaborations with artists, technical deep dives, and the LED technology behind gallery-scale work.",
-    "imageAlt": "LED-Bug blog — installation stories and technical deep dives",
-    "label": "Journal",
+    "metaDescription": "Historias de las instalaciones de TechxArtisan — colaboraciones con artistas, análisis técnicos profundos y la tecnología LED detrás de obras a escala de galería.",
+    "imageAlt": "Blog de LED-Bug — historias de instalaciones y análisis técnicos profundos",
+    "label": "Publicaciones",
     "heading": "Blog",
-    "intro": "Stories behind our installations — collaborations, experiments, and the technology that powers them.",
-    "readMore": "Read article",
-    "seriesPrev": "Previous",
-    "seriesNext": "Next",
-    "postFooterCta": "Building with LED-Bug controllers?",
-    "exploreControllers": "Explore controllers"
+    "intro": "Historias detrás de nuestras instalaciones — colaboraciones, experimentos y la tecnología que las impulsa.",
+    "readMore": "Leer artículo",
+    "seriesPart": "{series} · Parte {part} de {total}",
+    "seriesPrev": "Anterior",
+    "seriesNext": "Siguiente",
+    "postFooterCta": "¿Construyes con controladores LED-Bug?",
+    "exploreControllers": "Explorar controladores"
   }
 }

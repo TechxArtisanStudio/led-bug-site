@@ -1,7 +1,7 @@
 ---
 locale: es
-title: "The Joys of Colour, Technology and Light"
-subtitle: "Part 2 — Technical Challenges and Experiments"
+title: "Las Alegrías del Color, la Tecnología y la Luz"
+subtitle: "Parte 2 — Desafíos Técnicos y Experimentos"
 date: 2022-07-06
 authors:
   - TechxArtisan
@@ -11,89 +11,89 @@ categories:
 series: coloured-towers
 part: 2
 cover: https://assets.led-bug.com/images/blog/coloured-towers/part-2-technical-process-diagram.webp
-description: Jetson Nano colour detection, FastLED control, and powering 5,760 LEDs per pillar for Dave Bramston's Coloured Towers.
+description: Detección de color con Jetson Nano, control con FastLED y alimentación de 5,760 LEDs por pilar para las Torres de Color de Dave Bramston.
 ---
 
-In this post, we dive into the technical side of building the 4-metre-tall LED towers for British artist Dave Bramston. If you're curious about the creative backstory behind this collaboration and how we worked together to create the *Coloured Towers* during the pandemic for The Bowes Museum in the UK, check out [Part 1: Story Behind the Artwork](/blog/coloured-towers-part-1/).
+En este artículo, profundizamos en el lado técnico de la construcción de las torres LED de 4 metros de altura para el artista británico Dave Bramston. Si te interesa conocer la historia creativa detrás de esta colaboración y cómo trabajamos juntos para crear las *Torres de Color* durante la pandemia para The Bowes Museum en el Reino Unido, consulta la [Parte 1: Historia detrás de la Obra](/blog/coloured-towers-part-1/).
 
-When it came to realising this art installation, there were several technical hurdles we needed to overcome at TechxArtisan. The essential hardware we used included Nvidia's **Jetson Nano**—a low-power, GPU-backed microcomputer perfect for running AI algorithms—and the **ESP32**, a widely used microcontroller unit (MCU) that effectively manages communication between the host computer and LED light units using the [FastLED](https://fastled.io/) library.
+A la hora de materializar esta instalación artística, hubo varios obstáculos técnicos que tuvimos que superar en TechxArtisan. El hardware esencial que utilizamos incluyó el **Jetson Nano** de Nvidia, una microcomputadora de bajo consumo con GPU perfecta para ejecutar algoritmos de IA, y el **ESP32**, una unidad de microcontrolador (MCU) ampliamente utilizada que gestiona eficazmente la comunicación entre la computadora host y las unidades de luz LED utilizando la biblioteca [FastLED](https://fastled.io/).
 
-Here's a brief overview of the process:
+Aquí hay una breve descripción del proceso:
 
-1. **AI algorithms** on the Jetson Nano detect the clothes people are wearing via a camera.
-2. **K-means clustering** is used to extract the dominant colour of their clothes.
-3. The extracted RGB values are sent to the ESP32, which controls the LED strips attached to the artwork.
+1. **Algoritmos de IA** en el Jetson Nano detectan la ropa que lleva la gente a través de una cámara.
+2. **Agrupamiento k-means** se utiliza para extraer el color dominante de su ropa.
+3. Los valores RGB extraídos se envían al ESP32, que controla las tiras LED adheridas a la obra de arte.
 
 ![Technical process diagram](https://assets.led-bug.com/images/blog/coloured-towers/part-2-technical-process-diagram.webp)
 
-*The technical process.*
+*El proceso técnico.*
 
-Now, let's break down some of the most interesting technical challenges we encountered.
+Ahora, desglosemos algunos de los desafíos técnicos más interesantes que encontramos.
 
-### Detecting Clothes with Nvidia Jetson Nano
+### Detectar Ropa con Nvidia Jetson Nano
 
-The Jetson Nano allowed us to run open-source AI models trained to detect human clothing. The process involves capturing each image frame from a camera, dividing it into a matrix of 10x16 grids, and running a model to identify which grids match our target—clothes, in this case. Although the model is designed to detect a range of objects, including those on the **MHP Class list**, we specifically used it for clothes detection.
+El Jetson Nano nos permitió ejecutar modelos de IA de código abierto entrenados para detectar ropa humana. El proceso implica capturar cada cuadro de imagen de una cámara, dividirlo en una matriz de cuadrículas de 10x16 y ejecutar un modelo para identificar qué cuadrículas coinciden con nuestro objetivo: ropa, en este caso. Aunque el modelo está diseñado para detectar una variedad de objetos, incluyendo los de la **lista de clase MHP**, lo usamos específicamente para la detección de ropa.
 
-### Translating Colours Between Reality and Digital
+### Traducir Colores entre la Realidad y lo Digital
 
-Human vision perceives colour through reflected light, but machines "see" colours by capturing images and converting them into digital codes. Here's where the tricky part comes in—cameras don't always capture colours accurately due to factors like lighting, focus, white balance, and exposure settings. We aimed to bridge this gap and capture colours as close to reality as possible.
+La visión humana percibe el color a través de la luz reflejada, pero las máquinas "ven" los colores capturando imágenes y convirtiéndolas en códigos digitales. Aquí es donde viene la parte difícil: las cámaras no siempre capturan los colores con precisión debido a factores como la iluminación, el enfoque, el balance de blancos y la configuración de exposición. Nuestro objetivo fue salvar esta brecha y capturar los colores lo más cerca posible de la realidad.
 
 ![Colour checker board](https://assets.led-bug.com/images/blog/coloured-towers/part-2-colour-checker-board.webp)
 
-*Using a colour checker board to align digital colours with reality.*
+*Usando un tablero de verificación de color para alinear los colores digitales con la realidad.*
 
-Once the machine detects a colour, we apply k-means clustering to extract the dominant colour from the clothes. These RGB values are then averaged and sent to the LED controller.
+Una vez que la máquina detecta un color, aplicamos agrupamiento k-means para extraer el color dominante de la ropa. Estos valores RGB luego se promedian y se envían al controlador LED.
 
-### LED Colours and the RGB Problem
+### Colores LED y el Problema RGB
 
-The LED light strips (ws281x series) we used can mix red, green, and blue (RGB) channels to create a wide range of colours. But there are some limitations:
+Las tiras de luz LED (serie ws281x) que usamos pueden mezclar los canales rojo, verde y azul (RGB) para crear una amplia gama de colores. Pero hay algunas limitaciones:
 
-- LED lights struggle to represent greys and blacks if a visitor's clothes are dark. The LEDs simply reduce overall brightness.
-- Our ws281x strips tend to skew slightly blue, which meant we had to fine-tune the colour balance in software to get the shades just right.
+- Las luces LED tienen dificultades para representar grises y negros si la ropa de un visitante es oscura. Los LED simplemente reducen el brillo general.
+- Nuestras tiras ws281x tienden a desviarse ligeramente hacia el azul, lo que significa que tuvimos que ajustar el equilibrio de color en el software para obtener los tonos tepatinos.
 
 ![Colour detection testing](https://assets.led-bug.com/images/blog/coloured-towers/part-2-colour-detection-testing.webp)
 
-*Testing the stability of the colour detection programme.*
+*Probando la estabilidad del programa de detección de color.*
 
-There's also an interesting feedback loop in play: when the machine detects the colour of someone's clothes, it projects a corresponding LED light colour, which in turn enhances the clothes' original hue. This creates a dynamic, iterative process that makes the interaction more fun, especially with multiple participants wearing different colours.
+También hay un ciclo de retroalimentación interesante en juego: cuando la máquina detecta el color de la ropa de alguien, proyecta un color de luz LED correspondiente, lo que a su vez mejora el tono original de la ropa. Esto crea un proceso dinámico e iterativo que hace que la interacción sea más divertida, especialmente con múltiples participantes usando diferentes colores.
 
-### Powering All Those LED Strips
+### Alimentar Todas Esas Tiras LED
 
-Lighting up that many LED strips safely and efficiently was no small feat. Each of the four pillars required careful power calculations to ensure the system could handle the load without any issues. Here's a quick breakdown:
+Iluminar tantas tiras LED de manera segura y eficiente no fue poca cosa. Cada uno de los cuatro pilares requería cálculos de energía cuidadosas para asegurar que el sistema pudiera manejar la carga sin problemas. Aquí hay un desglose rápido:
 
-For each pillar:
+Para cada pilar:
 
-- **24 LED strips** × 4 metres per strip = **96 metres** of LEDs per pillar
-- **96 metres** × 60 LEDs per metre = **5,760 LEDs**
-- Each strip uses **4 amps** at full power (white light)
-- So, **24 strips** × 4 amps = **96 amps** required for one pillar
-- 96 amps × **12V** = **1,152W** per pillar
+- **24 tiras LED** × 4 metros por tira = **96 metros** de LED por pilar
+- **96 metros** × 60 LED por metro = **5,760 LED**
+- Cada tira usa **4 amperios** a plena potencia (luz blanca)
+- Entonces, **24 tiras** × 4 amperios = **96 amperios** requeridos para un pilar
+- 96 amperios × **12V** = **1,152W** por pilar
 
-This adds up to around **4,600W** when all four pillars are powered at full intensity. However, most of the light animations we created consume significantly less power, since we rarely use full white light. Nevertheless, building in some redundancy ensures the system remains safe and stable.
+Esto suma alrededor de **4,600W** cuando los cuatro pilares están alimentados a máxima intensidad. Sin embargo, la mayoría de las animaciones de luz que creamos consumen significativamente menos energía, ya que rara vez usamos luz blanca completa. Sin embargo, incorporar algo de redundancia asegura que el sistema permanezca seguro y estable.
 
 ![Connecting the power supply](https://assets.led-bug.com/images/blog/coloured-towers/part-2-power-supply-connection.webp)
 
-*Carefully connecting the power supply.*
+*Conectando cuidadosamente la fuente de alimentación.*
 
-For the technically inclined, here's a snippet from our FastLED code:
+Para los técnicamente inclinados, aquí hay un fragmento de nuestro código FastLED:
 
 ```cpp
 const uint8_t kMatrixWidth = 12;
 const uint8_t kMatrixHeight = 80;
 ```
 
-This allowed us to control **12 x 80 = 960 pixels** per pillar.
+Esto nos permitió controlar **12 x 80 = 960 píxeles** por pilar.
 
-### Final Thoughts
+### Reflexiones Finales
 
-For more in-depth technical insights, check out my post in the FastLED community on Reddit. I'd like to give a shout-out to **Quindor** and **Charles Goodwin** for their support and upvotes. Collaborating with Dave Bramston and The Bowes Museum has been an incredibly fulfilling experience, and we're eager to continue pushing the boundaries of art and technology.
+Para obtener información técnica más detallada, consulta mi publicación en la comunidad de FastLED en Reddit. Me gustaría dar las gracias a **Quindor** y **Charles Goodwin** por su apoyo y votos positivos. Colaborar con Dave Bramston y The Bowes Museum ha sido una experiencia increíblemente gratificante, y estamos ansiosos por continuar empujando los límites del arte y la tecnología.
 
-If you're working on a similar project or are just curious about this type of installation, feel free to reach out—we're always happy to share our knowledge and learn from others in the community.
+Si estás trabajando en un proyecto similar o simplemente tienes curiosidad sobre este tipo de instalación, no dudes en contactarnos, siempre estamos felices de compartir nuestro conocimiento y aprender de otros en la comunidad.
 
-Thanks for reading!
+¡Gracias por leer!
 
 ---
 
-**At a glance:** Four pillars, ~5 m each · 5,760 LEDs per pillar · Nvidia Jetson Nano + ESP32 · *Journey in Colour*, The Bowes Museum, 18 June – 30 October 2022.
+**De un vistazo:** Cuatro pilares, ~5 m cada uno · 5,760 LED por pilar · Nvidia Jetson Nano + ESP32 · *Journey in Colour*, The Bowes Museum, 18 de junio – 30 de octubre de 2022.
 
-[View the project hub](/projects/coloured-towers) · [Part 1: Story Behind the Artwork](/blog/coloured-towers-part-1/)
+[Ver el centro del proyecto](/projects/coloured-towers) · [Parte 1: Historia detrás de la Obra](/blog/coloured-towers-part-1/)

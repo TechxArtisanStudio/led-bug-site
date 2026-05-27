@@ -12,7 +12,8 @@
     "about": "关于",
     "shop": "商店",
     "menu": "菜单",
-    "language": "语言"
+    "language": "语言",
+    "mainAriaLabel": "主要"
   },
   "footer": {
     "tagline": "面向装置艺术与创客的创意 LED 控制方案。TechxArtisan 出品。",
@@ -47,6 +48,244 @@
       "WLED 固件",
       "DMX512 + MAX485",
       "ESP32 开发平台"
+    ],
+    "hardwareLabel": "硬件",
+    "hardwareTitle": "选择您的控制器",
+    "srName": "LED-Bug SR",
+    "srBlurb": "工程级标准。单通道支持 500–800 颗 LED。双路输出，支持 DMX512，板载麦克风。",
+    "srBullets": [
+      "ESP32-WROOM · 预装 WLED",
+      "支持 5V / 12V / 24V 灯带",
+      "MAX485 · DMX512 洗墙灯控制"
+    ],
+    "srFullSpecs": "完整规格 →",
+    "srAlt": "LED-Bug SR 控制器",
+    "miniName": "LED-Bug Mini",
+    "miniBlurb": "专为创客打造的紧凑型控制器。采用相同的 WLED 技术栈，体积更小巧。",
+    "miniBullets": [
+      "ESP32 · WLED 固件",
+      "可寻址 RGB 灯带",
+      "兼容 Arduino / PlatformIO"
+    ],
+    "miniFullSpecs": "完整规格 →",
+    "miniAlt": "LED-Bug Mini 控制器",
+    "blogLabel": "博客动态",
+    "blogTitle": "故事与深度解析",
+    "viewAllBlog": "查看全部 →"
+  },
+  "about": {
+    "title": "关于",
+    "metaDescription": "LED-Bug 是由 TechxArtisan 打造的创意 LED 控制平台——专为装置与创客设计的 ESP32 控制器，支持 WLED、DMX512 及自定义固件。",
+    "imageAlt": "TechxArtisan 打造的 LED-Bug 创意 LED 控制",
+    "heading": "关于",
+    "body": "LED-Bug 是由 TechxArtisan 打造的创意 LED 控制平台。我们为装置、创客及灯光艺术家开发控制器。"
+  },
+  "products": {
+    "back": "← 产品",
+    "shopNow": "立即购买",
+    "sr": {
+      "name": "LED-Bug SR",
+      "metaDescription": "工程级 ESP32 LED 控制器，预装 WLED，支持双路灯带输出、通过 MAX485 实现 DMX512 控制、板载麦克风用于音乐同步，并兼容 5V/12V/24V 灯带。",
+      "imageAlt": "LED-Bug SR WLED 与 DMX512 LED 控制器",
+      "body": "预装 WLED 的 ESP32 灯光控制器，具备双路灯带输出、通过 MAX485 实现 DMX512 控制，以及用于音乐同步的板载麦克风。"
+    },
+    "mini": {
+      "name": "LED-Bug Mini",
+      "metaDescription": "紧凑型 ESP32 LED 控制器，搭载适用于可寻址 RGB 灯带的 WLED 固件——非常适合桌面项目、原型开发及小型灯光装置。",
+      "imageAlt": "LED-Bug Mini 紧凑型 WLED LED 控制器",
+      "body": "紧凑型 ESP32 控制器，搭载适用于可寻址 RGB 灯带的 WLED 固件——非常适合桌面项目与小型灯光装置。"
+    }
+  },
+  "blog": {
+    "indexTitle": "博客",
+    "metaDescription": "来自 TechxArtisan 装置的故事——与艺术家的合作、技术深度解析，以及支撑画廊级作品的 LED 技术。",
+    "imageAlt": "LED-Bug 博客——装置故事与技术深度解析",
+    "label": "日志",
+    "heading": "博客",
+    "intro": "我们装置背后的故事——合作、实验以及驱动它们的技术。",
+    "readMore": "阅读文章",
+    "seriesPart": "{series} · 第 {part} 篇，共 {total} 篇",
+    "seriesPrev": "上一篇",
+    "seriesNext": "下一篇",
+    "postFooterCta": "正在使用 LED-Bug 控制器进行开发？",
+    "exploreControllers": "探索控制器"
+  },
+  "projects": {
+    "indexTitle": "项目",
+    "metaDescription": "TechxArtisan 的展厅级与工作室 LED 装置——互动塔、动态雕塑，以及由 LED-Bug 控制器驱动的定制固件。",
+    "imageAlt": "The Bowes Museum 的 Coloured Towers 互动 LED 装置",
+    "heading": "项目",
+    "intro": "由 LED-Bug 控制器和定制固件驱动的装置。",
+    "backToAll": "← 所有项目",
+    "artist": "艺术家",
+    "venue": "场馆",
+    "year": "年份",
+    "related": "相关项目",
+    "blogSeries": "博客系列",
+    "externalLinks": "链接",
+    "fallbackDescription": "TechxArtisan 的创意灯光装置。",
+    "readFullStory": "阅读完整故事 →",
+    "relatedWork": "相关作品",
+    "imageAltSuffix": "LED 装置",
+    "items": [
+      {
+        "slug": "coloured-towers",
+        "title": "彩色塔",
+        "tag": "互动装置",
+        "accent": "#f97316",
+        "summary": "四座五米高的光柱，读取访客服装的颜色并以LED镜像呈现——为Dave Bramston在The Bowes Museum举办的Journey in Colour展览打造的互动装置。",
+        "artist": "Dave Bramston",
+        "venue": "The Bowes Museum, UK",
+        "year": 2022,
+        "blogSeries": "coloured-towers",
+        "related": [
+          "moon-river",
+          "spectrum-of-objects"
+        ],
+        "links": [
+          {
+            "label": "博物馆展示 (YouTube)",
+            "url": "https://youtube.com/shorts/KyrteRpLcpw"
+          },
+          {
+            "label": "幕后花絮 (YouTube)",
+            "url": "https://youtube.com/shorts/uxvQTEgr8fY"
+          },
+          {
+            "label": "Journey in Colour展览",
+            "url": "https://thebowesmuseum.org.uk/exhibitions/journey-in-colour/"
+          },
+          {
+            "label": "Dave Bramston",
+            "url": "https://x.com/davidbramston"
+          }
+        ]
+      },
+      {
+        "slug": "mechanical-tree",
+        "title": "机械树",
+        "tag": "机器人",
+        "accent": "#00e5ff",
+        "summary": "一个结合运动、光线和定制控制的动力学\"机械树\"装置——采用 TechxArtisan 的 LED 和固件技术栈构建。",
+        "artist": "TechxArtisan",
+        "year": 2024,
+        "related": [
+          "the-first-law-of-forest",
+          "led-bug-demos"
+        ]
+      },
+      {
+        "slug": "moon-river",
+        "title": "月亮河",
+        "tag": "河流",
+        "accent": "#3b82f6",
+        "summary": "一件通过再生与改造反映客家文化的灯光装置，与 Dave Bramston 及 SUSTech 设计学院合作，安装于 Shenzhen 的古客家民居中。",
+        "artist": "Dave Bramston",
+        "venue": "Shenzhen, 中国",
+        "related": [
+          "coloured-towers",
+          "spectrum-of-objects"
+        ]
+      },
+      {
+        "slug": "spectrum-of-objects",
+        "title": "物之光谱",
+        "tag": "光谱",
+        "accent": "#a855f7",
+        "summary": "Dave Bramston 的个展，呈现七件合作作品——将来自 Pearl River Delta 的工厂余料，经由光与交互转化为形态与色彩的光谱。",
+        "artist": "Dave Bramston",
+        "related": [
+          "coloured-towers",
+          "moon-river"
+        ]
+      },
+      {
+        "slug": "magic-cube-lamp",
+        "title": "魔方灯",
+        "tag": "立方体",
+        "accent": "#ef4444",
+        "summary": "一款紧凑的可编程立方灯，展示 LED-Bug 的控制能力——以产品级形态呈现色彩、动态与图案。",
+        "artist": "TechxArtisan",
+        "related": [
+          "led-bug-demos"
+        ]
+      },
+      {
+        "slug": "led-bug-demos",
+        "title": "LED-Bug 演示",
+        "tag": "产品",
+        "accent": "#22d3ee",
+        "summary": "LED-Bug 控制器的现场演示 —— 适用于装置艺术、创客和灯光艺术家的 WLED、DMX512 和 ESP32 固件。",
+        "artist": "TechxArtisan",
+        "related": [
+          "mechanical-tree",
+          "magic-cube-lamp"
+        ]
+      },
+      {
+        "slug": "dreammech-forest",
+        "title": "DreamMech 森林",
+        "tag": "户外",
+        "accent": "#22c55e",
+        "summary": "位于Hefei的户外装置：金属树木搭配由N20电机驱动的机械花朵、RGB LED灯带，并通过WiFi同步控制20至30朵花的绽放。",
+        "artist": "TechxArtisan",
+        "venue": "Hefei, 中国",
+        "gallery": []
+      },
+      {
+        "slug": "the-first-law-of-forest",
+        "title": "森林第一法则",
+        "tag": "装置艺术",
+        "accent": "#84cc16",
+        "summary": "Chen Baoyang关于人类、机器与技术的装置作品——围绕“机械树”与“森林法则”的隐喻，结合AI、机械臂、烟雾与聚光灯。",
+        "artist": "Chen Baoyang",
+        "related": [
+          "mechanical-tree",
+          "congrats-x"
+        ],
+        "gallery": []
+      },
+      {
+        "slug": "congrats-x",
+        "title": "祝贺X，Y已在另一个Z中",
+        "tag": "自主",
+        "accent": "#eab308",
+        "summary": "一款由AI驱动的自主汽车，可在随机生成的迷宫中导航，每次到达出口后重置并生成新迷宫——与Chen Baoyang (CAFA) 和 TechxArtisan的合作项目。",
+        "artist": "Chen Baoyang",
+        "related": [
+          "the-first-law-of-forest"
+        ],
+        "gallery": []
+      },
+      {
+        "slug": "hello-5g-light",
+        "title": "Hello 5G Light",
+        "tag": "Anamorphic",
+        "accent": "#06b6d4",
+        "summary": "九十一根LED灯管经过特殊排列，从四米外的特定视角观看时，装置呈现出\"Hello 5G\"字样——内置多种预设及自定义色彩程序，适用于不同场合。",
+        "gallery": []
+      },
+      {
+        "slug": "relationship",
+        "title": "关系",
+        "tag": "动态",
+        "accent": "#e879f9",
+        "summary": "与 Wang Yuyang 合作：300 余根两端装有电机的白色 LED 灯管，以随机与规律的节奏运动——灯光的聚散隐喻着人与人之间的联系。",
+        "artist": "Wang Yuyang",
+        "gallery": []
+      },
+      {
+        "slug": "platos-cube",
+        "title": "柏拉图的立方体",
+        "tag": "动态",
+        "accent": "#f472b6",
+        "summary": "Wang Yuyang 的变形多面体：十二根白色 LED 灯管通过透明关节连接，在程序控制下扭曲和压缩，形态永不重复。",
+        "artist": "Wang Yuyang",
+        "related": [
+          "relationship"
+        ],
+        "gallery": []
+      }
     ]
   }
 }
