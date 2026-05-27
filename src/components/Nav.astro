@@ -44,49 +44,60 @@ const links = [
           </a>
         ))
       }
-      <LanguageSwitcher />
     </nav>
 
-    <a
-      href={SHOP_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="hidden rounded-full border border-accent/60 bg-accent/10 px-4 py-1.5 text-xs font-medium text-accent transition hover:bg-accent hover:text-white sm:inline-block"
-    >
-      {m.nav.shop}
-    </a>
-
-    <details class="relative md:hidden">
-      <summary
-        class="list-none cursor-pointer rounded-lg border border-white/10 px-3 py-2 text-sm text-white/80 [&::-webkit-details-marker]:hidden"
-      >
-        {m.nav.menu}
-      </summary>
-      <div
-        class="absolute right-0 mt-2 w-52 rounded-xl border border-white/10 bg-surface p-2 shadow-xl"
-      >
-        {
-          links.map((link) => (
-            <a
-              href={link.href}
-              class="block rounded-lg px-3 py-2 text-sm text-white/80 hover:bg-white/5 hover:text-cyan-400"
-            >
-              {link.label}
-            </a>
-          ))
-        }
-        <div class="mt-2 border-t border-white/10 px-2 pt-2">
-          <LanguageSwitcher />
-        </div>
-        <a
-          href={SHOP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mt-1 block rounded-lg bg-accent px-3 py-2 text-sm font-medium text-white hover:bg-accent/90"
-        >
-          {m.nav.shop}
-        </a>
+    <div class="flex shrink-0 items-center gap-2 sm:gap-3">
+      <div class="hidden md:block">
+        <LanguageSwitcher />
       </div>
-    </details>
+      <a
+        href={SHOP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden rounded-full border border-accent/60 bg-accent/10 px-4 py-1.5 text-xs font-medium text-accent transition hover:bg-accent hover:text-white md:inline-flex"
+      >
+        {m.nav.shop}
+      </a>
+
+      <details class="relative md:hidden">
+        <summary
+          class="list-none cursor-pointer rounded-lg border border-white/10 px-3 py-2 text-sm text-white/80 [&::-webkit-details-marker]:hidden"
+        >
+          {m.nav.menu}
+        </summary>
+        <div
+          class="absolute right-0 mt-2 w-56 rounded-xl border border-white/10 bg-surface p-2 shadow-xl"
+        >
+          <div class="flex flex-col gap-0.5">
+            {
+              links.map((link) => (
+                <a
+                  href={link.href}
+                  class="block rounded-lg px-3 py-2 text-sm text-white/80 hover:bg-white/5 hover:text-cyan-400"
+                >
+                  {link.label}
+                </a>
+              ))
+            }
+          </div>
+          <div class="mt-2.5 flex flex-col gap-3 border-t border-white/10 pt-3">
+            <div>
+              <span class="mb-1.5 block px-2 text-[10px] font-medium uppercase tracking-wider text-white/40">
+                {m.nav.language}
+              </span>
+              <LanguageSwitcher variant="menu" />
+            </div>
+            <a
+              href={SHOP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex w-full items-center justify-center rounded-full border border-accent/60 bg-accent/10 px-4 py-2.5 text-sm font-medium text-accent transition hover:bg-accent hover:text-white"
+            >
+              {m.nav.shop}
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
   </div>
 </header>

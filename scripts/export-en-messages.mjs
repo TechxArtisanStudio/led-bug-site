@@ -78,13 +78,9 @@ const messages = {
   cookie: {
     title: 'Cookie preferences',
     description:
-      'We use Google Analytics to understand how visitors use the site. Analytics cookies are off by default — enable them only if you are comfortable with anonymous usage data being collected.',
-    offByDefault: 'off by default',
-    manageSettings: 'Manage settings',
-    analyticsLabel: 'Google Analytics',
-    analyticsHint: 'Anonymous page views and traffic sources',
-    save: 'Save preferences',
-    essentialOnly: 'Essential only',
+      'We use Google Analytics to collect anonymous usage data (page views and traffic sources). Is that OK?',
+    accept: 'Yes',
+    decline: 'No',
   },
   home: {
     heroImageAlt: 'Mechanical Tree — LED installation powered by LED-Bug controllers',

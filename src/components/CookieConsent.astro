@@ -1,5 +1,4 @@
 ---
-import { GA_MEASUREMENT_ID } from '../lib/analytics';
 import { getMessages } from '../lib/i18n';
 import { getLocaleFromPath } from '../lib/locale-from-path';
 
@@ -15,7 +14,7 @@ const c = (await getMessages(locale)).cookie;
   aria-describedby="cookie-consent-desc"
   aria-modal="true"
 >
-  <div class="mx-auto flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+  <div class="mx-auto flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
     <div class="min-w-0">
       <p id="cookie-consent-title" class="font-mono text-xs uppercase tracking-widest text-cyan-400/80">
         {c.title}
@@ -23,50 +22,31 @@ const c = (await getMessages(locale)).cookie;
       <p id="cookie-consent-desc" class="mt-2 text-sm leading-relaxed text-white/65">
         {c.description}
       </p>
-      <details class="mt-3 text-sm text-white/55">
-        <summary class="cursor-pointer select-none text-white/70 hover:text-cyan-400">
-          {c.manageSettings}
-        </summary>
-        <label class="mt-3 flex cursor-pointer items-start gap-3 rounded-lg border border-white/10 bg-bg/50 p-3">
-          <input
-            id="cookie-consent-analytics"
-            type="checkbox"
-            class="mt-0.5 h-4 w-4 rounded border-white/20 bg-bg accent-accent"
-          />
-          <span>
-            <span class="block font-medium text-white/80">{c.analyticsLabel}</span>
-            <span class="mt-0.5 block text-xs text-white/45">
-              {c.analyticsHint} ({GA_MEASUREMENT_ID}).
-            </span>
-          </span>
-        </label>
-      </details>
     </div>
-    <div class="flex shrink-0 flex-wrap gap-2 sm:flex-col sm:items-stretch">
+    <div class="flex shrink-0 gap-2">
       <button
         id="cookie-consent-accept"
         type="button"
         class="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent/90"
       >
-        {c.save}
+        {c.accept}
       </button>
       <button
-        id="cookie-consent-reject"
+        id="cookie-consent-decline"
         type="button"
         class="rounded-full border border-white/15 px-5 py-2.5 text-sm text-white/75 transition hover:border-white/30 hover:text-white"
       >
-        {c.essentialOnly}
+        {c.decline}
       </button>
     </div>
   </div>
 </div>
 
-<script is:inline define:vars={{ measurementId: GA_MEASUREMENT_ID }}>
+<script is:inline>
   const STORAGE_KEY = 'led-bug-consent';
   const banner = document.getElementById('cookie-consent');
-  const checkbox = document.getElementById('cookie-consent-analytics');
   const acceptBtn = document.getElementById('cookie-consent-accept');
-  const rejectBtn = document.getElementById('cookie-consent-reject');
+  const declineBtn = document.getElementById('cookie-consent-decline');
 
   function readConsent() {
     try {
@@ -86,12 +66,7 @@ const c = (await getMessages(locale)).cookie;
   }
 
   function showBanner() {
-    if (!banner) return;
-    const saved = readConsent();
-    if (checkbox instanceof HTMLInputElement) {
-      checkbox.checked = Boolean(saved?.analytics);
-    }
-    banner.classList.remove('hidden');
+    banner?.classList.remove('hidden');
   }
 
   function applyConsent(analytics) {
@@ -105,15 +80,8 @@ const c = (await getMessages(locale)).cookie;
     }
   }
 
-  acceptBtn?.addEventListener('click', () => {
-    const analytics = checkbox instanceof HTMLInputElement ? checkbox.checked : false;
-    applyConsent(analytics);
-  });
-
-  rejectBtn?.addEventListener('click', () => {
-    if (checkbox instanceof HTMLInputElement) checkbox.checked = false;
-    applyConsent(false);
-  });
+  acceptBtn?.addEventListener('click', () => applyConsent(true));
+  declineBtn?.addEventListener('click', () => applyConsent(false));
 
   window.addEventListener('open-cookie-consent', showBanner);
 
