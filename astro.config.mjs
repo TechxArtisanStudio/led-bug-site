@@ -6,6 +6,7 @@ import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { rehypeFigures } from './src/lib/rehype-figures.ts';
+import { rehypeLocaleLinks } from './src/lib/rehype-locale-links.ts';
 import { legacyRedirects } from './src/lib/legacy-redirects.mjs';
 
 // https://astro.build/config
@@ -18,6 +19,6 @@ export default defineConfig({
   },
   integrations: [react(), mdx(), sitemap()],
   markdown: {
-    rehypePlugins: [rehypeFigures],
+    rehypePlugins: [rehypeFigures, rehypeLocaleLinks],
   },
 });
