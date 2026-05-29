@@ -1,0 +1,291 @@
+{
+  "seo": {
+    "defaultTitle": "LED-Bug — Creatieve LED-besturing",
+    "defaultDescription": "WLED · DMX512 · ESP32 LED-controllers voor galerij-installaties, makers en kunstenaars. Ontdek projecten, specificaties en verhalen van TechxArtisan.",
+    "siteName": "LED-Bug"
+  },
+  "nav": {
+    "work": "Werk",
+    "products": "Producten",
+    "projects": "Projecten",
+    "blog": "Blog",
+    "about": "Over ons",
+    "shop": "Winkel",
+    "menu": "Menu",
+    "language": "Taal",
+    "mainAriaLabel": "Hoofd"
+  },
+  "footer": {
+    "tagline": "Creatieve LED-besturing voor installaties en makers. Een product van TechxArtisan.",
+    "connect": "Verbinden",
+    "order": "Bestellen",
+    "shopNow": "Nu kopen",
+    "cookieSettings": "Cookie-instellingen",
+    "contact": "Contact",
+    "copyright": "TechxArtisan · LED-Bug"
+  },
+  "cookie": {
+    "title": "Cookievoorkeuren",
+    "description": "We gebruiken Google Analytics om anonieme gebruiksgegevens te verzamelen (paginaweergaven en verkeersbronnen). Is dat oké?",
+    "accept": "Ja",
+    "decline": "Nee"
+  },
+  "home": {
+    "heroImageAlt": "Mechanische Boom — LED-installatie aangedreven door LED-Bug controllers",
+    "tagline": "WLED · DMX512 · ESP32",
+    "title": "Creatieve LED-besturing voor installaties & makers",
+    "subtitle": "Van galerij-schaal robotica tot bureauprototypes — één controllerplatform dat WLED direct uitvoert en openstaat wanneer je aangepaste code nodig hebt.",
+    "ctaWork": "Bekijk ons werk",
+    "ctaProducts": "Ontdek controllers",
+    "scrollToWork": "Scroll naar werk",
+    "installationsLabel": "Installaties",
+    "installationsTitle": "Wat we hebben gebouwd",
+    "viewAllProjects": "Bekijk alle projecten →",
+    "platformLabel": "Platform",
+    "platformTitle": "Eén controllerplatform",
+    "platformBody": "Van galerij-installaties tot bureauprototypes — LED-Bug controllers draaien WLED direct uit de doos en bieden aanpassing wanneer je eigen code nodig hebt.",
+    "chips": [
+      "WLED-firmware",
+      "DMX512 + MAX485",
+      "ESP32-ontwikkelplatform"
+    ],
+    "hardwareLabel": "Hardware",
+    "hardwareTitle": "Kies je controller",
+    "srName": "LED-Bug SR",
+    "srBlurb": "Installatiekwaliteit. 500–800 LEDs per kanaal. Dubbele uitgangen, DMX512, ingebouwde microfoon.",
+    "srBullets": [
+      "ESP32-WROOM · WLED voorgeïnstalleerd",
+      "Ondersteuning voor 5V / 12V / 24V strips",
+      "MAX485 · DMX512 wall washers"
+    ],
+    "srFullSpecs": "Volledige specificaties →",
+    "srAlt": "LED-Bug SR controller",
+    "miniName": "LED-Bug Mini",
+    "miniBlurb": "Compacte controller voor makers. Dezelfde WLED-stack in een kleiner formaat.",
+    "miniBullets": [
+      "ESP32 · WLED-firmware",
+      "Adresseerbare RGB-strips",
+      "Klaar voor Arduino / PlatformIO"
+    ],
+    "miniFullSpecs": "Volledige specificaties →",
+    "miniAlt": "LED-Bug Mini controller",
+    "blogLabel": "Van de blog",
+    "blogTitle": "Verhalen & diepgaande analyses",
+    "viewAllBlog": "Alles bekijken →"
+  },
+  "about": {
+    "title": "Over ons",
+    "metaDescription": "LED-Bug is een creatief LED-besturingsplatform van TechxArtisan — ESP32-controllers met WLED, DMX512 en aangepaste firmware voor installaties en makers.",
+    "imageAlt": "LED-Bug creatieve LED-besturing door TechxArtisan",
+    "heading": "Over ons",
+    "body": "LED-Bug is een creatief LED-besturingsplatform van TechxArtisan. We bouwen controllers voor installaties, makers en kunstenaars die met licht werken."
+  },
+  "projects": {
+    "indexTitle": "Projecten",
+    "metaDescription": "LED-installaties op galerij- en studioschaal door TechxArtisan — interactieve torens, kinetische sculpturen en aangepaste firmware aangedreven door LED-Bug controllers.",
+    "imageAlt": "Coloured Towers interactieve LED-installatie in The Bowes Museum",
+    "heading": "Projecten",
+    "intro": "Installaties aangedreven door LED-Bug controllers en aangepaste firmware.",
+    "backToAll": "← Alle projecten",
+    "artist": "Kunstenaar",
+    "venue": "Locatie",
+    "year": "Jaar",
+    "related": "Gerelateerde projecten",
+    "blogSeries": "Blogserie",
+    "externalLinks": "Links",
+    "fallbackDescription": "creatieve lichtinstallatie door TechxArtisan.",
+    "readFullStory": "Lees het volledige verhaal →",
+    "relatedWork": "Gerelateerd werk",
+    "items": [
+      {
+        "slug": "coloured-towers",
+        "title": "Gekleurde Torens",
+        "tag": "Interactief",
+        "accent": "#f97316",
+        "summary": "Vier vijf meter hoge zuilen van licht die de kleuren van de kleding van bezoekers lezen en weerspiegelen in LED — een interactieve installatie voor Dave Bramstons Journey in Colour in The Bowes Museum.",
+        "artist": "Dave Bramston",
+        "venue": "The Bowes Museum, Verenigd Koninkrijk",
+        "year": 2022,
+        "blogSeries": "coloured-towers",
+        "related": [
+          "moon-river",
+          "spectrum-of-objects"
+        ],
+        "links": [
+          {
+            "label": "Museumpresentatie (YouTube)",
+            "url": "https://youtube.com/shorts/KyrteRpLcpw"
+          },
+          {
+            "label": "Achter de schermen (YouTube)",
+            "url": "https://youtube.com/shorts/uxvQTEgr8fY"
+          },
+          {
+            "label": "Journey in Colour tentoonstelling",
+            "url": "https://thebowesmuseum.org.uk/exhibitions/journey-in-colour/"
+          },
+          {
+            "label": "Dave Bramston",
+            "url": "https://x.com/davidbramston"
+          }
+        ]
+      },
+      {
+        "slug": "mechanical-tree",
+        "title": "Mechanische Boom",
+        "tag": "Robotica",
+        "accent": "#00e5ff",
+        "summary": "Een kinetische installatie van een \u201cmechanische boom\u201d die beweging, licht en aangepaste besturing combineert — gebouwd met de LED- en firmwarestack van TechxArtisan.",
+        "artist": "TechxArtisan",
+        "year": 2024,
+        "related": [
+          "the-first-law-of-forest",
+          "led-bug-demos"
+        ]
+      },
+      {
+        "slug": "moon-river",
+        "title": "Moon River",
+        "tag": "Rivier",
+        "accent": "#3b82f6",
+        "summary": "Een lichtinstallatie die de Hakka-cultuur weerspiegelt door regeneratie en hergebruik, geïnstalleerd in eeuwenoude Hakka-huizen in Shenzhen met Dave Bramston en de School of Design van SUSTech.",
+        "artist": "Dave Bramston",
+        "venue": "Shenzhen, China",
+        "related": [
+          "coloured-towers",
+          "spectrum-of-objects"
+        ]
+      },
+      {
+        "slug": "spectrum-of-objects",
+        "title": "Spectrum van Objecten",
+        "tag": "Spectrum",
+        "accent": "#a855f7",
+        "summary": "Dave Bramstons solotentoonstelling met zeven samenwerkingswerken — fabrieksresten uit de Pearl River Delta getransformeerd door licht en interactie tot een spectrum van vormen en kleuren.",
+        "artist": "Dave Bramston",
+        "related": [
+          "coloured-towers",
+          "moon-river"
+        ]
+      },
+      {
+        "slug": "magic-cube-lamp",
+        "title": "Magische Kubuslamp",
+        "tag": "Kubus",
+        "accent": "#ef4444",
+        "summary": "Een compacte, programmeerbare kubuslamp die LED-Bug besturing demonstreert — kleur, beweging en patronen in een productieklaar formaat.",
+        "artist": "TechxArtisan",
+        "related": [
+          "led-bug-demos"
+        ]
+      },
+      {
+        "slug": "led-bug-demos",
+        "title": "LED-Bug Demo's",
+        "tag": "Product",
+        "accent": "#22d3ee",
+        "summary": "Live demonstraties van LED-Bug controllers — WLED, DMX512 en ESP32-firmware voor installaties, makers en kunstenaars die met licht werken.",
+        "artist": "TechxArtisan",
+        "related": [
+          "mechanical-tree",
+          "magic-cube-lamp"
+        ]
+      },
+      {
+        "slug": "dreammech-forest",
+        "title": "DreamMech Bos",
+        "tag": "Buiten",
+        "accent": "#22c55e",
+        "summary": "Een buiteninstallatie in Hefei: metalen bomen met mechanische bloemen aangedreven door N20-motoren, RGB LED-strips en WiFi-gesynchroniseerde besturing over 20–30 bloemen.",
+        "artist": "TechxArtisan",
+        "venue": "Hefei, China",
+        "gallery": []
+      },
+      {
+        "slug": "the-first-law-of-forest",
+        "title": "De Eerste Wet van het Bos",
+        "tag": "Installatie",
+        "accent": "#84cc16",
+        "summary": "De installatie van Chen Baoyang over mensen, machines en technologie \u2014 AI, een robotarm, rook en schijnwerpers rond de metafoor van een \u201cmechanische boom\u201d en de \u201cboswet\u201d.",
+        "artist": "Chen Baoyang",
+        "related": [
+          "mechanical-tree",
+          "congrats-x"
+        ],
+        "gallery": []
+      },
+      {
+        "slug": "congrats-x",
+        "title": "Gefeliciteerd X, de Y zit in een andere Z",
+        "tag": "Autonoom",
+        "accent": "#eab308",
+        "summary": "Een AI-gestuurde autonome auto die door een willekeurig gegenereerd doolhof navigeert, bij elke uitgang reset en een nieuw doolhof genereert — een samenwerking met Chen Baoyang (CAFA) en TechxArtisan.",
+        "artist": "Chen Baoyang",
+        "related": [
+          "the-first-law-of-forest"
+        ],
+        "gallery": []
+      },
+      {
+        "slug": "hello-5g-light",
+        "title": "Hello 5G Licht",
+        "tag": "Anamorfisch",
+        "accent": "#06b6d4",
+        "summary": "Eenennegentig LED-buizen zo gerangschikt dat de installatie vanuit een specifiek gezichtspunt op vier meter afstand leesbaar is als \u201cHello 5G\u201d \u2014 met vooraf ingestelde en aangepaste kleurprogramma\u2019s voor verschillende gelegenheden.",
+        "gallery": []
+      },
+      {
+        "slug": "relationship",
+        "title": "Relatie",
+        "tag": "Kinetisch",
+        "accent": "#e879f9",
+        "summary": "Met Wang Yuyang: meer dan 300 witte LED-buizen op motoren aan beide uiteinden, bewegend in willekeurige en gestructureerde ritmes — lichten die elkaar ontmoeten en scheiden als metafoor voor menselijke verbinding.",
+        "artist": "Wang Yuyang",
+        "gallery": []
+      },
+      {
+        "slug": "platos-cube",
+        "title": "Plato's Kubus",
+        "tag": "Kinetisch",
+        "accent": "#f472b6",
+        "summary": "Het transformerende veelvlak van Wang Yuyang: twaalf witte LED-buizen verbonden door transparante gewrichten, die draaien en samendrukken onder programmabesturing zodat de vorm zich nooit herhaalt.",
+        "artist": "Wang Yuyang",
+        "related": [
+          "relationship"
+        ],
+        "gallery": []
+      }
+    ],
+    "imageAltSuffix": "LED-installatie"
+  },
+  "products": {
+    "back": "← Producten",
+    "shopNow": "Nu kopen",
+    "sr": {
+      "name": "LED-Bug SR",
+      "metaDescription": "Installatiekwaliteit ESP32 LED-controller met voorgeïnstalleerde WLED, dubbele stripuitgangen, DMX512 via MAX485, ingebouwde microfoon voor muzieksynschronisatie en ondersteuning voor 5V/12V/24V strips.",
+      "imageAlt": "LED-Bug SR WLED en DMX512 LED-controller",
+      "body": "ESP32 lichtcontroller met voorgeïnstalleerde WLED, dubbele stripuitgangen, DMX512 via MAX485 en ingebouwde microfoon voor muzieksynchronisatie."
+    },
+    "mini": {
+      "name": "LED-Bug Mini",
+      "metaDescription": "Compacte ESP32 LED-controller met WLED-firmware voor adresseerbare RGB-strips — ideaal voor bureauopstellingen, prototypes en kleinere installaties.",
+      "imageAlt": "LED-Bug Mini compacte WLED LED-controller",
+      "body": "Compacte ESP32-controller met WLED-firmware voor adresseerbare RGB-strips — ideaal voor bureauopstellingen en kleinere installaties."
+    }
+  },
+  "blog": {
+    "indexTitle": "Blog",
+    "metaDescription": "Verhalen van TechxArtisan-installaties — samenwerkingen met kunstenaars, technische diepgaande analyses en de LED-technologie achter werk op galerijschaal.",
+    "imageAlt": "LED-Bug blog — installatieverhalen en technische diepgaande analyses",
+    "label": "Publicaties",
+    "heading": "Blog",
+    "intro": "Verhalen achter onze installaties — samenwerkingen, experimenten en de technologie die ze aandrijft.",
+    "readMore": "Lees artikel",
+    "seriesPart": "{series} · Deel {part} van {total}",
+    "seriesPrev": "Vorige",
+    "seriesNext": "Volgende",
+    "postFooterCta": "Bouw je met LED-Bug controllers?",
+    "exploreControllers": "Ontdek controllers"
+  }
+}
