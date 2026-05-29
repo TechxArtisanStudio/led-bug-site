@@ -5,5 +5,10 @@
   "es": { "qa_passed": true },
   "fr": { "qa_passed": true },
   "ja": { "qa_passed": true },
-  "it": { "qa_passed": true }
+  "it": { "qa_passed": true },
+  "de": { "qa_passed": true },
+  "ko": { "qa_passed": true },
+  "pt-br": { "qa_passed": true },
+  "nl": { "qa_passed": true },
+  "ru": { "qa_passed": true }
 }

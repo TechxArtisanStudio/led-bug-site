@@ -5,7 +5,7 @@ import { defaultLocale } from '../i18n/locales';
 export type PostEntry = CollectionEntry<'posts'>;
 
 const LOCALE_SUFFIX =
-  /--(en|zh-cn|zh-tw|zh-hk|es|fr|ja|it)(?:\.(?:md|mdx))?$/;
+  /--(en|zh-cn|zh-tw|zh-hk|es|fr|ja|it|de|ko|pt-br|nl|ru)(?:\.(?:md|mdx))?$/;
 
 export function postLocale(post: PostEntry): Locale {
   const m = post.id.match(LOCALE_SUFFIX);
@@ -16,7 +16,7 @@ export function postLocale(post: PostEntry): Locale {
 export function postSlug(post: PostEntry): string {
   return post.id
     .replace(/\.mdx?$/, '')
-    .replace(/--(en|zh-cn|zh-tw|zh-hk|es|fr|ja|it)$/, '');
+    .replace(/--(en|zh-cn|zh-tw|zh-hk|es|fr|ja|it|de|ko|pt-br|nl|ru)$/, '');
 }
 
 export function postsForLocale(posts: PostEntry[], locale: Locale): PostEntry[] {

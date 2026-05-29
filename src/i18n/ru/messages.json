@@ -1,0 +1,291 @@
+{
+  "seo": {
+    "defaultTitle": "LED-Bug — Креативное управление LED",
+    "defaultDescription": "WLED · DMX512 · ESP32 LED-контроллеры для галерейных инсталляций, мейкеров и художников. Изучайте проекты, спецификации и истории от TechxArtisan.",
+    "siteName": "LED-Bug"
+  },
+  "nav": {
+    "work": "Работы",
+    "products": "Продукты",
+    "projects": "Проекты",
+    "blog": "Блог",
+    "about": "О нас",
+    "shop": "Магазин",
+    "menu": "Меню",
+    "language": "Язык",
+    "mainAriaLabel": "Основная"
+  },
+  "footer": {
+    "tagline": "Креативное управление LED для инсталляций и мейкеров. Продукт TechxArtisan.",
+    "connect": "Связаться",
+    "order": "Заказать",
+    "shopNow": "Купить сейчас",
+    "cookieSettings": "Настройки cookie",
+    "contact": "Контакты",
+    "copyright": "TechxArtisan · LED-Bug"
+  },
+  "cookie": {
+    "title": "Настройки cookie",
+    "description": "Мы используем Google Analytics для сбора анонимных данных об использовании (просмотры страниц и источники трафика). Вы согласны?",
+    "accept": "Да",
+    "decline": "Нет"
+  },
+  "home": {
+    "heroImageAlt": "Механическое Дерево — LED-инсталляция на контроллерах LED-Bug",
+    "tagline": "WLED · DMX512 · ESP32",
+    "title": "Креативное управление LED для инсталляций и мейкеров",
+    "subtitle": "От галерейной робототехники до настольных прототипов — одна платформа контроллеров, которая запускает WLED из коробки и открывается, когда нужен собственный код.",
+    "ctaWork": "Смотреть наши работы",
+    "ctaProducts": "Изучить контроллеры",
+    "scrollToWork": "Прокрутить к работам",
+    "installationsLabel": "Инсталляции",
+    "installationsTitle": "Что мы создали",
+    "viewAllProjects": "Все проекты →",
+    "platformLabel": "Платформа",
+    "platformTitle": "Одна платформа контроллеров",
+    "platformBody": "От галерейных инсталляций до настольных прототипов — контроллеры LED-Bug работают с WLED из коробки и открыты для кастомизации, когда нужен собственный код.",
+    "chips": [
+      "Прошивка WLED",
+      "DMX512 + MAX485",
+      "Платформа разработки ESP32"
+    ],
+    "hardwareLabel": "Оборудование",
+    "hardwareTitle": "Выберите контроллер",
+    "srName": "LED-Bug SR",
+    "srBlurb": "Инсталляционный класс. 500–800 светодиодов на канал. Два выхода, DMX512, встроенный микрофон.",
+    "srBullets": [
+      "ESP32-WROOM · WLED предустановлен",
+      "Поддержка лент 5V / 12V / 24V",
+      "MAX485 · DMX512 wall washers"
+    ],
+    "srFullSpecs": "Полные характеристики →",
+    "srAlt": "Контроллер LED-Bug SR",
+    "miniName": "LED-Bug Mini",
+    "miniBlurb": "Компактный контроллер для мейкеров. Тот же стек WLED в меньшем форм-факторе.",
+    "miniBullets": [
+      "ESP32 · Прошивка WLED",
+      "Адресуемые RGB-ленты",
+      "Готов для Arduino / PlatformIO"
+    ],
+    "miniFullSpecs": "Полные характеристики →",
+    "miniAlt": "Контроллер LED-Bug Mini",
+    "blogLabel": "Из блога",
+    "blogTitle": "Истории и глубокие разборы",
+    "viewAllBlog": "Смотреть все →"
+  },
+  "about": {
+    "title": "О нас",
+    "metaDescription": "LED-Bug — креативная платформа управления LED от TechxArtisan: ESP32-контроллеры с WLED, DMX512 и кастомной прошивкой для инсталляций и мейкеров.",
+    "imageAlt": "LED-Bug креативное управление LED от TechxArtisan",
+    "heading": "О нас",
+    "body": "LED-Bug — креативная платформа управления LED от TechxArtisan. Мы создаём контроллеры для инсталляций, мейкеров и художников, работающих со светом."
+  },
+  "projects": {
+    "indexTitle": "Проекты",
+    "metaDescription": "LED-инсталляции галерейного и студийного масштаба от TechxArtisan — интерактивные башни, кинетические скульптуры и кастомная прошивка на контроллерах LED-Bug.",
+    "imageAlt": "Интерактивная LED-инсталляция Coloured Towers в The Bowes Museum",
+    "heading": "Проекты",
+    "intro": "Инсталляции на контроллерах LED-Bug и кастомной прошивке.",
+    "backToAll": "← Все проекты",
+    "artist": "Художник",
+    "venue": "Площадка",
+    "year": "Год",
+    "related": "Связанные проекты",
+    "blogSeries": "Серия блога",
+    "externalLinks": "Ссылки",
+    "fallbackDescription": "креативная световая инсталляция от TechxArtisan.",
+    "readFullStory": "Читать полную историю →",
+    "relatedWork": "Связанные работы",
+    "items": [
+      {
+        "slug": "coloured-towers",
+        "title": "Цветные Башни",
+        "tag": "Интерактивный",
+        "accent": "#f97316",
+        "summary": "Четыре пятиметровые колонны света, считывающие цвета одежды посетителей и отражающие их в LED — интерактивная инсталляция для выставки Dave Bramston «Journey in Colour» в The Bowes Museum.",
+        "artist": "Dave Bramston",
+        "venue": "The Bowes Museum, Великобритания",
+        "year": 2022,
+        "blogSeries": "coloured-towers",
+        "related": [
+          "moon-river",
+          "spectrum-of-objects"
+        ],
+        "links": [
+          {
+            "label": "Презентация музея (YouTube)",
+            "url": "https://youtube.com/shorts/KyrteRpLcpw"
+          },
+          {
+            "label": "За кулисами (YouTube)",
+            "url": "https://youtube.com/shorts/uxvQTEgr8fY"
+          },
+          {
+            "label": "Выставка Journey in Colour",
+            "url": "https://thebowesmuseum.org.uk/exhibitions/journey-in-colour/"
+          },
+          {
+            "label": "Dave Bramston",
+            "url": "https://x.com/davidbramston"
+          }
+        ]
+      },
+      {
+        "slug": "mechanical-tree",
+        "title": "Механическое Дерево",
+        "tag": "Робототехника",
+        "accent": "#00e5ff",
+        "summary": "Кинетическая инсталляция «механическое дерево», сочетающая движение, свет и кастомное управление — построена на LED- и firmware-стеке TechxArtisan.",
+        "artist": "TechxArtisan",
+        "year": 2024,
+        "related": [
+          "the-first-law-of-forest",
+          "led-bug-demos"
+        ]
+      },
+      {
+        "slug": "moon-river",
+        "title": "Moon River",
+        "tag": "Река",
+        "accent": "#3b82f6",
+        "summary": "Световая инсталляция, отражающая культуру хакка через обновление и переработку, установленная в старинных домах хакка в Шэньчжэне совместно с Dave Bramston и Школой дизайна SUSTech.",
+        "artist": "Dave Bramston",
+        "venue": "Shenzhen, China",
+        "related": [
+          "coloured-towers",
+          "spectrum-of-objects"
+        ]
+      },
+      {
+        "slug": "spectrum-of-objects",
+        "title": "Спектр Объектов",
+        "tag": "Спектр",
+        "accent": "#a855f7",
+        "summary": "Персональная выставка Dave Bramston из семи совместных работ — фабричные остатки из дельты Жемчужной реки, преобразованные светом и взаимодействием в спектр форм и цветов.",
+        "artist": "Dave Bramston",
+        "related": [
+          "coloured-towers",
+          "moon-river"
+        ]
+      },
+      {
+        "slug": "magic-cube-lamp",
+        "title": "Волшебная Кубическая Лампа",
+        "tag": "Куб",
+        "accent": "#ef4444",
+        "summary": "Компактная программируемая лампа-куб, демонстрирующая управление LED-Bug — цвет, движение и паттерны в готовом к производству форм-факторе.",
+        "artist": "TechxArtisan",
+        "related": [
+          "led-bug-demos"
+        ]
+      },
+      {
+        "slug": "led-bug-demos",
+        "title": "Демонстрации LED-Bug",
+        "tag": "Продукт",
+        "accent": "#22d3ee",
+        "summary": "Живые демонстрации контроллеров LED-Bug — WLED, DMX512 и прошивка ESP32 для инсталляций, мейкеров и художников, работающих со светом.",
+        "artist": "TechxArtisan",
+        "related": [
+          "mechanical-tree",
+          "magic-cube-lamp"
+        ]
+      },
+      {
+        "slug": "dreammech-forest",
+        "title": "Лес DreamMech",
+        "tag": "Наружная",
+        "accent": "#22c55e",
+        "summary": "Уличная инсталляция в Хэфэе: металлические деревья с механическими цветами на моторах N20, RGB LED-лентами и WiFi-синхронизированным управлением на 20–30 цветков.",
+        "artist": "TechxArtisan",
+        "venue": "Hefei, China",
+        "gallery": []
+      },
+      {
+        "slug": "the-first-law-of-forest",
+        "title": "Первый Закон Леса",
+        "tag": "Инсталляция",
+        "accent": "#84cc16",
+        "summary": "Инсталляция Чэнь Баояна о людях, машинах и технологиях — ИИ, робот-манипулятор, дым и прожекторы вокруг метафоры «механического дерева» и «закона леса».",
+        "artist": "Chen Baoyang",
+        "related": [
+          "mechanical-tree",
+          "congrats-x"
+        ],
+        "gallery": []
+      },
+      {
+        "slug": "congrats-x",
+        "title": "Поздравляем X, Y находится в другом Z",
+        "tag": "Автономный",
+        "accent": "#eab308",
+        "summary": "Автономный автомобиль на базе ИИ, проходящий случайно сгенерированный лабиринт, сбрасывающийся на каждом выходе и создающий новый лабиринт — коллаборация с Чэнь Баояном (CAFA) и TechxArtisan.",
+        "artist": "Chen Baoyang",
+        "related": [
+          "the-first-law-of-forest"
+        ],
+        "gallery": []
+      },
+      {
+        "slug": "hello-5g-light",
+        "title": "Свет Hello 5G",
+        "tag": "Анаморфный",
+        "accent": "#06b6d4",
+        "summary": "Девяносто одна LED-трубка, расположенная так, что с определённой точки обзора на расстоянии четырёх метров инсталляция читается как «Hello 5G» — с предустановленными и настраиваемыми цветовыми программами для разных случаев.",
+        "gallery": []
+      },
+      {
+        "slug": "relationship",
+        "title": "Отношения",
+        "tag": "Кинетический",
+        "accent": "#e879f9",
+        "summary": "Совместно с Ван Юйяном: более 300 белых LED-трубок на моторах с обоих концов, движущихся в случайных и упорядоченных ритмах — огни, встречающиеся и расходящиеся как метафора человеческой связи.",
+        "artist": "Wang Yuyang",
+        "gallery": []
+      },
+      {
+        "slug": "platos-cube",
+        "title": "Куб Платона",
+        "tag": "Кинетический",
+        "accent": "#f472b6",
+        "summary": "Трансформирующийся многогранник Ван Юйяна: двенадцать белых LED-трубок, соединённых прозрачными шарнирами, скручивающихся и сжимающихся под программным управлением так, что форма никогда не повторяется.",
+        "artist": "Wang Yuyang",
+        "related": [
+          "relationship"
+        ],
+        "gallery": []
+      }
+    ],
+    "imageAltSuffix": "LED-инсталляция"
+  },
+  "products": {
+    "back": "← Продукты",
+    "shopNow": "Купить сейчас",
+    "sr": {
+      "name": "LED-Bug SR",
+      "metaDescription": "ESP32 LED-контроллер инсталляционного класса с предустановленным WLED, двумя выходами для лент, DMX512 через MAX485, встроенным микрофоном для синхронизации с музыкой и поддержкой лент 5V/12V/24V.",
+      "imageAlt": "LED-Bug SR контроллер WLED и DMX512",
+      "body": "ESP32 контроллер освещения с предустановленным WLED, двумя выходами для лент, DMX512 через MAX485 и встроенным микрофоном для синхронизации с музыкой."
+    },
+    "mini": {
+      "name": "LED-Bug Mini",
+      "metaDescription": "Компактный ESP32 LED-контроллер с прошивкой WLED для адресуемых RGB-лент — идеален для настольных сборок, прототипов и небольших инсталляций.",
+      "imageAlt": "LED-Bug Mini компактный контроллер WLED",
+      "body": "Компактный ESP32-контроллер с прошивкой WLED для адресуемых RGB-лент — идеален для настольных сборок и небольших инсталляций."
+    }
+  },
+  "blog": {
+    "indexTitle": "Блог",
+    "metaDescription": "Истории инсталляций TechxArtisan — коллаборации с художниками, технические разборы и LED-технологии за работами галерейного масштаба.",
+    "imageAlt": "Блог LED-Bug — истории инсталляций и технические разборы",
+    "label": "Публикации",
+    "heading": "Блог",
+    "intro": "Истории наших инсталляций — коллаборации, эксперименты и технологии, которые их питают.",
+    "readMore": "Читать статью",
+    "seriesPart": "{series} · Часть {part} из {total}",
+    "seriesPrev": "Предыдущая",
+    "seriesNext": "Следующая",
+    "postFooterCta": "Создаёте с контроллерами LED-Bug?",
+    "exploreControllers": "Изучить контроллеры"
+  }
+}

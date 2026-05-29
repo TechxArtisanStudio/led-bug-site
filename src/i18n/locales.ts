@@ -9,6 +9,11 @@ export const locales = [
   'fr',
   'ja',
   'it',
+  'de',
+  'ko',
+  'pt-br',
+  'nl',
+  'ru',
 ] as const;
 
 export type Locale = (typeof locales)[number];
@@ -34,6 +39,11 @@ export const localeMeta: Record<Locale, LocaleMeta> = {
   fr: { code: 'fr', label: 'Français', htmlLang: 'fr', ogLocale: 'fr_FR' },
   ja: { code: 'ja', label: '日本語', htmlLang: 'ja', ogLocale: 'ja_JP' },
   it: { code: 'it', label: 'Italiano', htmlLang: 'it', ogLocale: 'it_IT' },
+  de: { code: 'de', label: 'Deutsch', htmlLang: 'de', ogLocale: 'de_DE' },
+  ko: { code: 'ko', label: '한국어', htmlLang: 'ko', ogLocale: 'ko_KR' },
+  'pt-br': { code: 'pt-br', label: 'Português (Brasil)', htmlLang: 'pt-BR', ogLocale: 'pt_BR' },
+  nl: { code: 'nl', label: 'Nederlands', htmlLang: 'nl', ogLocale: 'nl_NL' },
+  ru: { code: 'ru', label: 'Русский', htmlLang: 'ru', ogLocale: 'ru_RU' },
 };
 
 /** LLM/OpenCC targets (no English). */
