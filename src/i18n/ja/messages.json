@@ -81,25 +81,26 @@
     "body": "LED-Bugは、TechxArtisanが提供するクリエイティブなLED制御プラットフォームです。光を扱うインスタレーション、メイカー、アーティスト向けにコントローラーを設計・製造しています。"
   },
   "projects": {
-    "indexTitle": "Projects",
-    "metaDescription": "Gallery-scale and studio LED installations by TechxArtisan — interactive towers, kinetic sculptures, and custom firmware powered by LED-Bug controllers.",
-    "imageAlt": "Coloured Towers interactive LED installation at The Bowes Museum",
-    "heading": "Projects",
-    "intro": "Installations powered by LED-Bug controllers and custom firmware.",
-    "backToAll": "← All projects",
-    "artist": "Artist",
-    "venue": "Venue",
-    "year": "Year",
-    "related": "Related projects",
-    "blogSeries": "Blog series",
-    "externalLinks": "Links",
-    "fallbackDescription": "creative lighting installation by TechxArtisan.",
-    "readFullStory": "Read the full story →",
-    "relatedWork": "Related work",
+    "indexTitle": "プロジェクト",
+    "metaDescription": "TechxArtisanによるギャラリー規模およびスタジオ規模のLEDインスタレーション — インタラクティブタワー、キネティック彫刻、LED-Bugコントローラー駆動のカスタムファームウェア。",
+    "imageAlt": "The Bowes MuseumのインタラクティブLEDインスタレーション Coloured Towers",
+    "heading": "プロジェクト",
+    "intro": "LED-Bugコントローラーとカスタムファームウェアで実現したインスタレーション。",
+    "backToAll": "← すべてのプロジェクト",
+    "artist": "アーティスト",
+    "venue": "会場",
+    "year": "年",
+    "related": "関連プロジェクト",
+    "blogSeries": "ブログシリーズ",
+    "externalLinks": "リンク",
+    "fallbackDescription": "TechxArtisanによるクリエイティブな照明インスタレーション。",
+    "readFullStory": "全文を読む →",
+    "relatedWork": "関連作品",
+    "imageAltSuffix": "LEDインスタレーション",
     "items": [
       {
         "slug": "coloured-towers",
-        "title": "Coloured Towers",
+        "title": "カラード・タワーズ",
         "tag": "インタラクティブ",
         "accent": "#f97316",
         "summary": "5メートルの光の柱4本が、来場者の衣服の色を読み取り、LEDでその色を映し出すインタラクティブなインスタレーション。Dave Bramstonの「Journey in Colour」展（The Bowes Museum）のために制作されました。",
@@ -113,15 +114,15 @@
         ],
         "links": [
           {
-            "label": "Museum showcase (YouTube)",
+            "label": "美術館ショーケース (YouTube)",
             "url": "https://youtube.com/shorts/KyrteRpLcpw"
           },
           {
-            "label": "Behind the scenes (YouTube)",
+            "label": "メイキング映像 (YouTube)",
             "url": "https://youtube.com/shorts/uxvQTEgr8fY"
           },
           {
-            "label": "Journey in Colour exhibition",
+            "label": "Journey in Colour 展覧会",
             "url": "https://thebowesmuseum.org.uk/exhibitions/journey-in-colour/"
           },
           {
@@ -145,8 +146,8 @@
       },
       {
         "slug": "moon-river",
-        "title": "Moon River",
-        "tag": "River",
+        "title": "ムーン・リバー",
+        "tag": "リバー",
         "accent": "#3b82f6",
         "summary": "客家文化を再生と再利用を通じて表現する光のインスタレーション。Shenzhenの古い客家の家屋に、Dave BramstonとSUSTech School of Designと共に設置。",
         "artist": "Dave Bramston",
@@ -193,7 +194,7 @@
       },
       {
         "slug": "dreammech-forest",
-        "title": "DreamMech Forest",
+        "title": "ドリームメック・フォレスト",
         "tag": "アウトドア",
         "accent": "#22c55e",
         "summary": "Hefeiの屋外インスタレーション：N20モーター駆動のメカニカルフラワー、RGB LEDストリップ、WiFi同期制御による20～30輪の花を備えた金属製の木。",
@@ -203,7 +204,7 @@
       },
       {
         "slug": "the-first-law-of-forest",
-        "title": "The First Law of Forest",
+        "title": "森の第一法則",
         "tag": "インスタレーション",
         "accent": "#84cc16",
         "summary": "Chen Baoyangのインスタレーション。人間、機械、テクノロジー——AI、ロボットアーム、煙、スポットライトが「機械の木」と「森の法則」のメタファーを巡って展開される。",
@@ -274,16 +275,17 @@
     }
   },
   "blog": {
-    "indexTitle": "Blog",
-    "metaDescription": "Stories from TechxArtisan installations — collaborations with artists, technical deep dives, and the LED technology behind gallery-scale work.",
-    "imageAlt": "LED-Bug blog — installation stories and technical deep dives",
-    "label": "Journal",
-    "heading": "Blog",
-    "intro": "Stories behind our installations — collaborations, experiments, and the technology that powers them.",
-    "readMore": "Read article",
-    "seriesPrev": "Previous",
-    "seriesNext": "Next",
-    "postFooterCta": "Building with LED-Bug controllers?",
-    "exploreControllers": "Explore controllers"
+    "indexTitle": "ブログ",
+    "metaDescription": "TechxArtisanのインスタレーションからのストーリー — アーティストとのコラボレーション、技術的な深掘り、ギャラリー規模の作品を支えるLED技術。",
+    "imageAlt": "LED-Bug ブログ — インスタレーションストーリーと技術的考察",
+    "label": "ジャーナル",
+    "heading": "ブログ",
+    "intro": "私たちのインスタレーションの舞台裏 — コラボレーション、実験、そしてそれらを支える技術。",
+    "readMore": "記事を読む",
+    "seriesPart": "{series} · パート{part}/{total}",
+    "seriesPrev": "前へ",
+    "seriesNext": "次へ",
+    "postFooterCta": "LED-Bugコントローラーで制作していますか？",
+    "exploreControllers": "コントローラーを見る"
   }
 }
