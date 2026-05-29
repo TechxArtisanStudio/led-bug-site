@@ -1,0 +1,56 @@
+{
+  "seo": {
+    "defaultTitle": "LED-Bug — 크리에이티브 LED 컨트롤",
+    "defaultDescription": "WLED · DMX512 · ESP32 LED 컨트롤러 — 갤러리 설치, 메이커, 아티스트를 위한 프로젝트, 사양, 스토리를 만나보세요. TechxArtisan 제작.",
+    "siteName": "LED-Bug"
+  },
+  "nav": { "work": "작업", "products": "제품", "projects": "프로젝트", "blog": "블로그", "about": "소개", "shop": "쇼핑", "menu": "메뉴", "language": "언어", "mainAriaLabel": "메인" },
+  "footer": { "tagline": "설치 작업과 메이커를 위한 크리에이티브 LED 컨트롤. TechxArtisan 제품.", "connect": "연결", "order": "주문", "shopNow": "지금 구매", "cookieSettings": "쿠키 설정", "contact": "문의", "copyright": "TechxArtisan · LED-Bug" },
+  "cookie": { "title": "쿠키 환경설정", "description": "익명의 사용 데이터(페이지 조회수 및 트래픽 소스)를 수집하기 위해 Google 애널리틱스를 사용합니다. 동의하시겠습니까?", "accept": "예", "decline": "아니오" },
+  "home": {
+    "heroImageAlt": "Mechanical Tree — LED-Bug 컨트롤러로 구동되는 LED 설치 작품",
+    "tagline": "WLED · DMX512 · ESP32",
+    "title": "설치 작업 & 메이커를 위한 크리에이티브 LED 컨트롤",
+    "subtitle": "갤러리 규모의 로봇 작품부터 데스크 프로토타입까지 — 기본으로 WLED을 실행하고 커스텀 코드가 필요할 때 확장할 수 있는 하나의 컨트롤러 플랫폼.",
+    "ctaWork": "작업 보기", "ctaProducts": "컨트롤러 살펴보기", "scrollToWork": "작업으로 스크롤",
+    "installationsLabel": "설치 작업", "installationsTitle": "우리가 만든 것들",
+    "viewAllProjects": "모든 프로젝트 보기 →",
+    "platformLabel": "플랫폼", "platformTitle": "하나의 컨트롤러 플랫폼",
+    "platformBody": "갤러리 설치 작품부터 데스크 프로토타입까지 — LED-Bug 컨트롤러는 기본으로 WLED을 실행하고 커스텀 코드가 필요할 때 확장됩니다.",
+    "chips": ["WLED 펌웨어", "DMX512 + MAX485", "ESP32 개발 플랫폼"],
+    "hardwareLabel": "하드웨어", "hardwareTitle": "컨트롤러를 선택하세요",
+    "srName": "LED-Bug SR", "srBlurb": "설치 작업용. 채널당 500–800 LED. 듀얼 출력, DMX512, 온보드 마이크.",
+    "srBullets": ["ESP32-WROOM · WLED 사전 설치", "5V / 12V / 24V 스트립 지원", "MAX485 · DMX512 월 워셔"],
+    "srFullSpecs": "전체 사양 →", "srAlt": "LED-Bug SR 컨트롤러",
+    "miniName": "LED-Bug Mini", "miniBlurb": "메이커를 위한 컴팩트 컨트롤러. 더 작은 폼팩터에 동일한 WLED 스택.",
+    "miniBullets": ["ESP32 · WLED 펌웨어", "어드레서블 RGB 스트립", "Arduino / PlatformIO 호환"],
+    "miniFullSpecs": "전체 사양 →", "miniAlt": "LED-Bug Mini 컨트롤러",
+    "blogLabel": "블로그에서", "blogTitle": "스토리 & 심층 분석", "viewAllBlog": "모두 보기 →"
+  },
+  "about": { "title": "소개", "metaDescription": "LED-Bug는 TechxArtisan이 만든 크리에이티브 LED 컨트롤 플랫폼입니다 — 설치 작업과 메이커를 위한 WLED, DMX512, 커스텀 펌웨어 탑재 ESP32 컨트롤러.", "imageAlt": "TechxArtisan의 LED-Bug 크리에이티브 LED 컨트롤", "heading": "소개", "body": "LED-Bug는 TechxArtisan이 만든 크리에이티브 LED 컨트롤 플랫폼입니다. 빛을 소재로 작업하는 설치 작가, 메이커, 아티스트를 위한 컨트롤러를 만듭니다." },
+  "projects": {
+    "indexTitle": "프로젝트", "metaDescription": "TechxArtisan의 갤러리 규모 및 스튜디오 LED 설치 작업 — LED-Bug 컨트롤러와 커스텀 펌웨어로 구현한 인터랙티브 타워, 키네틱 조각, 작품들.",
+    "imageAlt": "The Bowes Museum의 Coloured Towers 인터랙티브 LED 설치 작품",
+    "heading": "프로젝트", "intro": "LED-Bug 컨트롤러와 커스텀 펌웨어로 구현한 설치 작품들.",
+    "backToAll": "← 전체 프로젝트", "artist": "아티스트", "venue": "장소", "year": "연도",
+    "related": "관련 프로젝트", "blogSeries": "블로그 시리즈", "externalLinks": "링크",
+    "fallbackDescription": "TechxArtisan의 크리에이티브 조명 설치 작품.",
+    "readFullStory": "전체 스토리 읽기 →", "relatedWork": "관련 작업", "imageAltSuffix": "LED 설치 작품",
+    "items": [
+      { "slug": "coloured-towers", "title": "컬러드 타워", "tag": "인터랙티브", "accent": "#f97316", "summary": "관람객 의상의 색상을 읽어 LED로 반영하는 5미터 높이의 빛의 기둥 네 개 — The Bowes Museum에서 열린 Dave Bramston의 Journey in Colour 전시를 위한 인터랙티브 설치 작품.", "artist": "Dave Bramston", "venue": "The Bowes Museum, UK", "year": 2022, "blogSeries": "coloured-towers", "related": ["moon-river", "spectrum-of-objects"], "links": [{ "label": "뮤지엄 쇼케이스 (YouTube)", "url": "https://youtube.com/shorts/KyrteRpLcpw" }, { "label": "비하인드 스토리 (YouTube)", "url": "https://youtube.com/shorts/uxvQTEgr8fY" }, { "label": "Journey in Colour 전시", "url": "https://thebowesmuseum.org.uk/exhibitions/journey-in-colour/" }, { "label": "Dave Bramston", "url": "https://x.com/davidbramston" }] },
+      { "slug": "mechanical-tree", "title": "메카니컬 트리", "tag": "로보틱스", "accent": "#00e5ff", "summary": "움직임, 빛, 커스텀 제어를 결합한 키네틱 '기계 나무' 설치 작품 — TechxArtisan의 LED 및 펌웨어 스택으로 제작.", "artist": "TechxArtisan", "year": 2024, "related": ["the-first-law-of-forest", "led-bug-demos"] },
+      { "slug": "moon-river", "title": "문 리버", "tag": "리버", "accent": "#3b82f6", "summary": "재생과 재활용을 통해 하카 문화를 반영한 빛의 설치 작품 — Dave Bramston과 SUSTech 디자인스쿨이 함께 선전의 하카 고택에 설치.", "artist": "Dave Bramston", "venue": "Shenzhen, China", "related": ["coloured-towers", "spectrum-of-objects"] },
+      { "slug": "spectrum-of-objects", "title": "스펙트럼 오브 오브젝트", "tag": "스펙트럼", "accent": "#a855f7", "summary": "Dave Bramston의 개인전 — 주강 삼각주 공장의 잔여물을 빛과 인터랙션을 통해 다양한 형태와 색의 스펙트럼으로 변환한 7개의 협업 작품.", "artist": "Dave Bramston", "related": ["coloured-towers", "moon-river"] },
+      { "slug": "magic-cube-lamp", "title": "매직 큐브 램프", "tag": "큐브", "accent": "#ef4444", "summary": "LED-Bug 컨트롤을 보여주는 컴팩트한 프로그래밍 가능 큐브 램프 — 제품 수준의 폼팩터에 색상, 움직임, 패턴을 구현.", "artist": "TechxArtisan", "related": ["led-bug-demos"] },
+      { "slug": "led-bug-demos", "title": "LED-Bug 데모", "tag": "제품", "accent": "#22d3ee", "summary": "LED-Bug 컨트롤러 라이브 데모 — 설치 작업, 메이커, 빛을 소재로 작업하는 아티스트를 위한 WLED, DMX512, ESP32 펌웨어.", "artist": "TechxArtisan", "related": ["mechanical-tree", "magic-cube-lamp"] },
+      { "slug": "dreammech-forest", "title": "드림메크 포레스트", "tag": "아웃도어", "accent": "#22c55e", "summary": "허페이의 야외 설치 작품: N20 모터로 구동되는 기계 꽃이 달린 금속 나무, RGB LED 스트립, 20–30개 꽃을 WiFi로 동기화 제어.", "artist": "TechxArtisan", "venue": "Hefei, China", "gallery": [] },
+      { "slug": "the-first-law-of-forest", "title": "숲의 제1법칙", "tag": "설치 작품", "accent": "#84cc16", "summary": "인간, 기계, 기술에 대한 천바오양의 설치 작품 — AI, 로봇 팔, 연기, 스포트라이트가 '기계 나무'와 '숲의 법칙'이라는 메타포를 둘러싸고 전개.", "artist": "Chen Baoyang", "related": ["mechanical-tree", "congrats-x"], "gallery": [] },
+      { "slug": "congrats-x", "title": "Congrats X, the Y is in another Z", "tag": "자율주행", "accent": "#eab308", "summary": "무작위 생성 미로를 탐색하고, 출구마다 리셋하며 새로운 미로를 생성하는 AI 기반 자율 주행 차량 — 천바오양(CAFA)과 TechxArtisan의 협업 작품.", "artist": "Chen Baoyang", "related": ["the-first-law-of-forest"], "gallery": [] },
+      { "slug": "hello-5g-light", "title": "Hello 5G 라이트", "tag": "아나모픽", "accent": "#06b6d4", "summary": "91개의 LED 튜브를 배치하여 4미터 떨어진 특정 시점에서 'Hello 5G'로 읽히는 설치 작품 — 다양한 행사를 위한 프리셋 및 커스텀 컬러 프로그램 포함.", "gallery": [] },
+      { "slug": "relationship", "title": "릴레이션십", "tag": "키네틱", "accent": "#e879f9", "summary": "왕위양과의 협업: 양 끝에 모터가 달린 300개 이상의 흰색 LED 튜브가 무작위 및 패턴 리듬으로 움직이며 — 만남과 이별을 인간 관계의 메타포로 표현.", "artist": "Wang Yuyang", "gallery": [] },
+      { "slug": "platos-cube", "title": "플라톤의 큐브", "tag": "키네틱", "accent": "#f472b6", "summary": "왕위양의 변형 다면체: 투명 조인트로 연결된 12개의 흰색 LED 튜브가 프로그램 제어로 뒤틀리고 압축되어 형태가 반복되지 않는 작품.", "artist": "Wang Yuyang", "related": ["relationship"], "gallery": [] }
+    ]
+  },
+  "products": { "back": "← 제품", "shopNow": "지금 구매", "sr": { "name": "LED-Bug SR", "metaDescription": "WLED 사전 설치, 듀얼 스트립 출력, MAX485 DMX512, 음악 싱크용 온보드 마이크, 5V/12V/24V 스트립 지원을 갖춘 설치 작업용 ESP32 LED 컨트롤러.", "imageAlt": "LED-Bug SR WLED 및 DMX512 LED 컨트롤러", "body": "WLED 사전 설치, 듀얼 스트립 출력, MAX485 DMX512, 음악 싱크용 온보드 마이크를 갖춘 ESP32 라이트 컨트롤러." }, "mini": { "name": "LED-Bug Mini", "metaDescription": "어드레서블 RGB 스트립용 WLED 펌웨어 탑재 컴팩트 ESP32 LED 컨트롤러 — 데스크 빌드, 프로토타입, 소규모 설치에 적합.", "imageAlt": "LED-Bug Mini 컴팩트 WLED LED 컨트롤러", "body": "어드레서블 RGB 스트립용 WLED 펌웨어 탑재 컴팩트 ESP32 컨트롤러 — 데스크 빌드와 소규모 설치에 적합." } },
+  "blog": { "indexTitle": "블로그", "metaDescription": "TechxArtisan 설치 작업의 이야기 — 아티스트와의 협업, 기술 심층 분석, 갤러리 규모 작업을 뒷받침하는 LED 기술.", "imageAlt": "LED-Bug 블로그 — 설치 스토리와 기술 심층 분석", "label": "저널", "heading": "블로그", "intro": "설치 작업 비하인드 스토리 — 협업, 실험, 그리고 이를 가능하게 한 기술.", "readMore": "기사 읽기", "seriesPart": "{series} · {total}편 중 {part}편", "seriesPrev": "이전", "seriesNext": "다음", "postFooterCta": "LED-Bug 컨트롤러로 작업하시나요?", "exploreControllers": "컨트롤러 살펴보기" }
+}
